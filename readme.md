@@ -14,7 +14,6 @@
   This module structure gives you possibility, to install only that what is
   needed.
 </p>
-![Real Estate Manager](re_mgr.gif)
 <h2>Base module</h2>
 <p>
   Real Estate Manager in base version, provides related entities capable of
