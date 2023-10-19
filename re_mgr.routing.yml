@@ -1,0 +1,109 @@
+# Global routes.
+re_mgr.admin:
+  path: '/admin/re-mgr'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::overview'
+    link_id: 're_mgr.admin'
+    _title: 'Real estate manager'
+  requirements:
+    _permission: 'access real estate manager administration pages'
+
+re_mgr.content:
+  path: '/admin/re-mgr/content'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Content'
+  requirements:
+    _permission: 'access real estate manager administration pages'
+
+re_mgr.configuration:
+  path: '/admin/re-mgr/config'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Configuration'
+  requirements:
+    _permission: 'access real estate manager administration pages'
+
+re_mgr.configuration.entities:
+  path: '/admin/re-mgr/config/entities'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Entities configuration'
+  requirements:
+    _permission: 'access real estate manager administration pages'
+
+re_mgr.purge:
+  path: '/admin/re-mgr/config/purge'
+  defaults:
+    _form: '\Drupal\re_mgr\Form\PurgeDataForm'
+    _title: 'Purge data'
+  requirements:
+    _permission: 'administer module'
+
+# Autocomplete callback.
+re_mgr.entity_autocomplete:
+  path: '/re-mgr-entity-reference-autocomplete/{target_type}/{selection_handler}/{selection_settings_key}'
+  defaults:
+    _controller: '\Drupal\re_mgr\Controller\RealestateManagerEntityAutocompleteController::handleAutocomplete'
+  requirements:
+    _access: 'TRUE'
+
+# Estate entity routes.
+entity.re_mgr_estate.revision_delete_form:
+  path: "/admin/re-mgr/content/estate/{re_mgr_estate}/revision/{re_mgr_estate_revision}/delete"
+  defaults:
+    _form: '\Drupal\re_mgr\Form\Entity\EntityRevisionDeleteForm'
+    _title: 'Delete earlier revision'
+  requirements:
+    _permission: 'administer estate entity'
+  options:
+    parameters:
+      re_mgr_estate:
+        type: entity:re_mgr_estate
+      re_mgr_estate_revision:
+        type: entity_revision:re_mgr_estate
+
+# Building entity routes.
+entity.re_mgr_building.revision_delete_form:
+  path: "/admin/re-mgr/content/building/{re_mgr_building}/revision/{re_mgr_building_revision}/delete"
+  defaults:
+    _form: '\Drupal\re_mgr\Form\Entity\EntityRevisionDeleteForm'
+    _title: 'Delete earlier revision'
+  requirements:
+    _permission: 'administer building entity'
+  options:
+    parameters:
+      re_mgr_building:
+        type: entity:re_mgr_building
+      re_mgr_building_revision:
+        type: entity_revision:re_mgr_building
+
+# Floor entity routes.
+entity.re_mgr_floor.revision_delete_form:
+  path: "/admin/re-mgr/content/floor/{re_mgr_floor}/revision/{re_mgr_floor_revision}/delete"
+  defaults:
+    _form: '\Drupal\re_mgr\Form\Entity\EntityRevisionDeleteForm'
+    _title: 'Delete earlier revision'
+  requirements:
+    _permission: 'administer floor entity'
+  options:
+    parameters:
+      re_mgr_floor:
+        type: entity:re_mgr_floor
+      re_mgr_floor_revision:
+        type: entity_revision:re_mgr_floor
+
+# Flat entity routes.
+entity.re_mgr_flat.revision_delete_form:
+  path: "/admin/re-mgr/content/flat/{re_mgr_flat}/revision/{re_mgr_flat_revision}/delete"
+  defaults:
+    _form: '\Drupal\re_mgr\Form\Entity\EntityRevisionDeleteForm'
+    _title: 'Delete earlier revision'
+  requirements:
+    _permission: 'administer flat entity'
+  options:
+    parameters:
+      re_mgr_flat:
+        type: entity:re_mgr_flat
+      re_mgr_flat_revision:
+        type: entity_revision:re_mgr_flat

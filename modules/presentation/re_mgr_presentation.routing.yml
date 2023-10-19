@@ -1,0 +1,12 @@
+re_mgr_presentation.presentation_change_tab:
+  path: '/re-mgr-presentation/change-tab/{plugin_id}/{block_id}'
+  defaults:
+    _controller: 'Drupal\re_mgr_presentation\Controller\AjaxChangeTab::changeTab'
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      plugin_id:
+        type: string
+      block_id:
+        type: string

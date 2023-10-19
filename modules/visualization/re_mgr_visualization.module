@@ -1,0 +1,171 @@
+<?php
+
+/**
+ * @file
+ * Contain all hook functions for Real estate manager Visualization module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_theme().
+ *
+ * Add module themes.
+ */
+function re_mgr_visualization_theme(): array {
+  return [
+    'visualization_presentation' => [
+      'variables' => [
+        'block_id' => NULL,
+        'navigation' => [],
+        'entity_description' => [],
+        'guide' => NULL,
+        'image' => [],
+        'paths' => [],
+        'description_btn' => NULL,
+        'back_btn' => NULL,
+        'ask_for_offer_btn' => NULL,
+        'legend' => [],
+        'tooltip_data' => [],
+        'webform' => [],
+        'front_url' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_bundle_after_create().
+ *
+ * Add coordinates and main image fields field when new entity type is build.
+ */
+function re_mgr_visualization_entity_bundle_after_create(string $entity_type_id): void {
+  $entity_type_list = \Drupal::service('re_mgr.entity_service')::ENTITY_LIST;
+
+  if (in_array($entity_type_id, $entity_type_list)) {
+    $main_image_field_service = \Drupal::service('re_mgr_visualization.main_image_field_service');
+    $main_image_field_service->createMainImageField();
+
+    if ($entity_type_id !== 're_mgr_estate') {
+      $coodinates_field_service = \Drupal::service('re_mgr_visualization.coordinates_field_service');
+      $coodinates_field_service->createCoordinatesField();
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add states to Real estate manager Building entity on coordinates and prevent
+ * from deleting entity if it's used in any block.
+ */
+function re_mgr_visualization_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  /* Add states to Real estate manager Building entity on coordinates. */
+  if (str_starts_with($form_id, 're_mgr_building_') && isset($form['coordinates'])) {
+    $form['coordinates']['#states'] = [
+      'visible' => [
+        ':input[name="estate_id[0][target_id]"]' => ['filled' => TRUE],
+      ],
+    ];
+  }
+
+  /* Prevent from deleting entity if it's used in any block. */
+  $routes = [
+    'entity.re_mgr_estate.delete_form',
+    'entity.re_mgr_estate.delete_multiple_form',
+    'entity.re_mgr_building.delete_form',
+    'entity.re_mgr_building.delete_multiple_form',
+  ];
+  /** @var string */
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if (in_array($route_name, $routes)) {
+    $any_blocking_block = FALSE;
+    $placed_re_mgr_blocks = \Drupal::service('entity_type.manager')
+      ->getStorage('block')
+      ->loadByProperties(['plugin' => 're_mgr_presentation']);
+    $entity_list = [];
+    $entity_type = explode('.', $route_name)[1];
+
+    /* Prepare entity list for single delete forms */
+    if (str_ends_with($route_name, '.delete_form')) {
+      /** @var \Drupal\re_mgr\Form\Entity\EntityDeleteForm */
+      $form_object = $form_state->getFormObject();
+      $entity_list[$form_object->getEntity()->id()] = $form_object->getEntity();
+    }
+
+    /* Prepare entity list for multiple delete forms */
+    if (str_ends_with($route_name, '.delete_multiple_form')) {
+      /** @var \Drupal\re_mgr\Form\Entity\EntityDeleteMultipleForm */
+      $form_object = $form_state->getFormObject();
+      $selection_list = $form_object->getSelection();
+
+      foreach ($selection_list as $entity_id => $selection) {
+        $entity_list[$entity_id] = \Drupal::service('entity_type.manager')
+          ->getStorage($entity_type)
+          ->load($entity_id);
+      }
+    }
+
+    /* Check if entity is used in Real estate manager Presentation block */
+    if (!empty($entity_list)) {
+      /** @var \Drupal\block\Entity\Block $block */
+      foreach ($placed_re_mgr_blocks as $block) {
+        /** @var array */
+        $block_settings = $block->get('settings');
+        $visualization_plugin_settings = $block_settings['visualization']['settings'];
+        $starting_entity_type = $visualization_plugin_settings['start_from_building'];
+        $starting_entity_id = $starting_entity_type ? $visualization_plugin_settings['starting_building'] : $visualization_plugin_settings['starting_estate'];
+
+        foreach ($entity_list as $single_entity_id => $single_entity) {
+          if ($starting_entity_id == $single_entity_id) {
+            if ($starting_entity_type === 0 && $entity_type === 're_mgr_estate') {
+              $any_blocking_block = TRUE;
+              break;
+            }
+            elseif ($starting_entity_type === 1 && $entity_type === 're_mgr_building') {
+              $any_blocking_block = TRUE;
+              break;
+            }
+          }
+        }
+      }
+
+      if ($any_blocking_block) {
+        unset($form['description']);
+        unset($form['entities']);
+        unset($form['actions']);
+        $form['error_related_block'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'p',
+          '#value' => t('At least one block uses the entity you are about to delete. You can not remove it until you have removed all related blocks.'),
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_form_element_label().
+ *
+ * Add required class to custom required validated fields.
+ */
+function re_mgr_visualization_preprocess_form_element_label(array &$variables): void {
+  $elements = [
+    'Select starting estate',
+    'Select starting building',
+  ];
+  $element_title = '';
+
+  if ($variables['element']['#title'] instanceof TranslatableMarkup) {
+    $element_title = $variables['element']['#title']->getUntranslatedString();
+  }
+  else {
+    $element_title = $variables['element']['#title'];
+  }
+
+  if (in_array($element_title, $elements)) {
+    $variables['attributes']['class'][] = 'form-required';
+  }
+}

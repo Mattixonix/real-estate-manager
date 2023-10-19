@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - re_mgr_demo
+id: demo
+label: Demo
+description: 'Used in Real estate manager Demo module.'
+new_revision: true

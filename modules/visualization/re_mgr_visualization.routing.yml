@@ -1,0 +1,90 @@
+re_mgr_visualization.visualizations_ajax_next_step:
+  path: '/re-mgr-visualization/next/{block_id}/{current_entity_keyword}/{chosen_entity_id}/{path_fill}/{path_target_opacity}/{starting_entity_keyword}/{sell_entity_keyword}/{webform_id}/{main_image_style}'
+  defaults:
+    _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::nextStep'
+    main_image_style: NULL
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      block_id:
+        type: string
+      current_entity_keyword:
+        type: string
+      chosen_entity_id:
+        type: string
+      path_fill:
+        type: string
+      path_target_opacity:
+        type: string
+      starting_entity_keyword:
+        type: string
+      sell_entity_keyword:
+        type: string
+      webform_id:
+        type: string
+      main_image_style:
+        type: string
+
+re_mgr_visualization.visualizations_ajax_prev_step:
+  path: '/re-mgr-visualization/prev/{block_id}/{current_entity_keyword}/{current_entity_id}/{path_fill}/{path_target_opacity}/{starting_entity_keyword}/{sell_entity_keyword}/{webform_id}/{main_image_style}'
+  defaults:
+    _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::prevStep'
+    main_image_style: NULL
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      block_id:
+        type: string
+      current_entity_keyword:
+        type: string
+      current_entity_id:
+        type: string
+      path_fill:
+        type: string
+      path_target_opacity:
+        type: string
+      starting_entity_keyword:
+        type: string
+      sell_entity_keyword:
+        type: string
+      webform_id:
+        type: string
+      main_image_style:
+        type: string
+
+re_mgr_visualization.visualizations_ajax_change_step:
+  path: '/re-mgr-visualization/change/{block_id}/{selected_entity_keyword}/{selected_entity_id}/{path_fill}/{path_target_opacity}/{starting_entity_keyword}/{sell_entity_keyword}/{webform_id}/{main_image_style}'
+  defaults:
+    _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::changeStep'
+    main_image_style: NULL
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      block_id:
+        type: string
+      selected_entity_keyword:
+        type: string
+      selected_entity_id:
+        type: string
+      path_fill:
+        type: string
+      path_target_opacity:
+        type: string
+      starting_entity_keyword:
+        type: string
+      sell_entity_keyword:
+        type: string
+      webform_id:
+        type: string
+      main_image_style:
+        type: string
+
+entity.re_mgr_building.canonical_description:
+  path: '/building/{re_mgr_building}/description'
+  defaults:
+    _entity_view: 're_mgr_building.description'
+  requirements:
+    _entity_access: 're_mgr_building.view'

@@ -1,0 +1,4 @@
+services:
+  re_mgr.entity_service:
+    class: Drupal\re_mgr\Service\EntityService
+    arguments: ['@entity_type.manager', '@current_route_match']

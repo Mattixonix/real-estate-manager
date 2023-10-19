@@ -1,0 +1,157 @@
+<?php
+
+/**
+ * @file
+ * Contain all hook functions for Real estate manager module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\views\Entity\View;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_theme().
+ *
+ * Add module themes.
+ */
+function re_mgr_theme(): array {
+  return [
+    'entity_form' => [
+      'render element' => 'form',
+    ],
+    're_mgr_help' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_operation().
+ *
+ * Add module related entities operations.
+ */
+function re_mgr_entity_operation(EntityInterface $entity): array {
+  $operations = [];
+
+  if (\Drupal::moduleHandler()->moduleExists('views')) {
+    $entity_type_id = $entity->getEntityType()->id();
+
+    if (
+      str_contains($entity_type_id, 're_mgr_')
+      && !str_contains($entity_type_id, '_type')
+      && $entity_type_id !== 're_mgr_flat'
+    ) {
+      $entities_map = [
+        're_mgr_estate' => 're_mgr_buildings',
+        're_mgr_building' => 're_mgr_floors',
+        're_mgr_floor' => 're_mgr_flats',
+      ];
+
+      $enabled_views = Views::getEnabledViews();
+      $require_view = array_key_exists($entities_map[$entity_type_id], $enabled_views) ? $enabled_views[$entities_map[$entity_type_id]] : NULL;
+
+      if ($require_view instanceof View) {
+        $current_view_related_display = $require_view->getDisplay('related');
+
+        if (!empty($current_view_related_display)) {
+          $route_name = 'view.' . $entities_map[$entity_type_id] . '.related';
+
+          $operations['list'] = [
+            'title' => t('List'),
+            'url' => Url::fromRoute($route_name, ['arg_0' => $entity->id()]),
+            'weight' => 10,
+          ];
+        }
+      }
+    }
+  }
+
+  return $operations;
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ *
+ * Add library with icon to toolbar.
+ */
+function re_mgr_toolbar_alter(array &$items): void {
+  $admin_theme = \Drupal::config('system.theme')->get('admin');
+  $attached_library = '';
+
+  switch ($admin_theme) {
+    case 'claro':
+      $attached_library = 're_mgr/toolbar';
+      break;
+
+    case 'gin':
+      $attached_library = 're_mgr/toolbar-gin';
+      break;
+
+    default:
+      $attached_library = 're_mgr/toolbar';
+  }
+
+  $items['administration']['#attached']['library'][] = $attached_library;
+}
+
+/**
+ * Implements hook_link_alter().
+ *
+ * Disable destination in list operations, provides way to multiple delete
+ * related entities.
+ */
+function re_mgr_link_alter(array &$variables): void {
+  $link_route_name = NULL;
+
+  if ($variables['url']->isRouted()) {
+    $link_route_name = $variables['url']->getRouteName();
+  }
+
+  $related_views_entities = [
+    're_mgr_buildings',
+    're_mgr_floors',
+    're_mgr_flats',
+  ];
+
+  if (!empty($link_route_name) && str_starts_with($link_route_name, 'view.')) {
+    foreach ($related_views_entities as $entity) {
+      if ($link_route_name === 'view.' . $entity . '.related') {
+        unset($variables['options']['query']['destination']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * Add help page for module.
+ */
+function re_mgr_help(string $route_name, RouteMatchInterface $route_match): array {
+  if ($route_name === 'help.page.re_mgr') {
+    return ['#theme' => 're_mgr_help'];
+  }
+
+  return [];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Remove unwanted modules administration links from help page.
+ */
+function re_mgr_preprocess_links__help(array &$variables): void {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_parameter = \Drupal::routeMatch()->getParameter('name');
+
+  if ($route_name === 'help.page' && $route_parameter === 're_mgr') {
+    $heading_text = !empty($variables['heading']['text']) ? $variables['heading']['text'] : NULL;
+    $heading_clean_string = !empty($heading_text) ? $heading_text->getUntranslatedString() : NULL;
+
+    if ($heading_clean_string === '@module administration pages' && !empty($variables['links'])) {
+      unset($variables['links']);
+    }
+  }
+}

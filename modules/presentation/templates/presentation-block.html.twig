@@ -1,0 +1,15 @@
+<div class="re-mgr-presentation" data-block-id="{{ block_id }}">
+
+  {% if tabs %}
+    <div class="tabs">
+      {% for tab in tabs %}
+        {{ tab }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div id="{{ 're-mgr-presentation-content--' ~ block_id }}" class="content">
+    {{ content }}
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+name: Real estate manager Search Engine
+type: module
+description: Provides a presentation tab with search engine.
+core_version_requirement: ^10
+package: Real estate
+
+dependencies:
+  - re_mgr:re_mgr
+  - re_mgr:re_mgr_presentation

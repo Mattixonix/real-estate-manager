@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - re_mgr
+id: re_mgr_estate_delete_action
+label: 'Delete estate'
+type: re_mgr_estate
+plugin: entity:delete_action:re_mgr_estate
+configuration: {  }

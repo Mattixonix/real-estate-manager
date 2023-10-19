@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.re_mgr_building.tooltip
+    - re_mgr.re_mgr_building.demo
+  enforced:
+    module:
+      - re_mgr_demo
+id: re_mgr_building.demo.tooltip
+targetEntityType: re_mgr_building
+bundle: demo
+mode: tooltip
+content:
+  name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  status:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  estate_id: true
+  langcode: true
+  main_image: true
+  uid: true

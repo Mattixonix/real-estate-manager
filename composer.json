@@ -1,0 +1,22 @@
+{
+    "name": "drupal/re_mgr",
+    "description": "Provides additional functionalities for real estate management.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mattixon",
+            "role": "Maintainer"
+        }
+    ],
+    "homepage": "https://drupal.org/project/re-mgr",
+    "support": {
+        "issues": "https://drupal.org/project/issues/re-mgr",
+        "source": "https://git.drupalcode.org/project/re-mgr"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "drupal/entity": "^1",
+        "drupal/webform": "^6.2"
+    }
+}

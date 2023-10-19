@@ -1,0 +1,12 @@
+global:
+  css:
+    theme:
+      css/re-mgr-visualization.css: {}
+  js:
+    js/re-mgr-visualization.js: {}
+  dependencies:
+    - core/drupal.ajax
+
+visualization_config_form:
+  js:
+    js/visualization-config-form.js: {}

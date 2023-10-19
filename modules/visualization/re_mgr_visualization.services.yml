@@ -1,0 +1,12 @@
+services:
+  re_mgr_visualization.coordinates_field_service:
+    class: Drupal\re_mgr_visualization\Service\CoordinatesFieldService
+    arguments: ['@entity_type.manager', '@entity_type.bundle.info', '@entity_display.repository']
+
+  re_mgr_visualization.main_image_field_service:
+    class: Drupal\re_mgr_visualization\Service\MainImageFieldService
+    arguments: ['@entity_type.manager', '@entity_type.bundle.info', '@entity_display.repository']
+
+  re_mgr_visualization.visualization_service:
+    class: Drupal\re_mgr_visualization\Service\VisualizationService
+    arguments: ['@entity_type.manager', '@entity_display.repository', '@config.factory', '@re_mgr.entity_service']

@@ -1,0 +1,9 @@
+name: Real estate manager Presentation
+type: module
+description: Provides a block responsible for data presentation.
+core_version_requirement: ^10
+package: Real estate
+
+dependencies:
+  - drupal:block
+  - re_mgr:re_mgr

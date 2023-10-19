@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Handles Real estate manager Demo installation.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Activate creator.
+ */
+function re_mgr_demo_install(): void {
+  $moduleHandler = \Drupal::service('module_handler');
+  $creator_service = \Drupal::service('re_mgr_demo.create_data');
+  $creator_service->initBaseCreator();
+
+  /* If module exists, force to build fields to new demo bundle. */
+  if ($moduleHandler->moduleExists('re_mgr_visualization')) {
+    $coordinates_field_service = \Drupal::service('re_mgr_visualization.main_image_field_service');
+    $coordinates_field_service->createMainImageField();
+    $coordinates_field_service = \Drupal::service('re_mgr_visualization.coordinates_field_service');
+    $coordinates_field_service->createCoordinatesField();
+    $creator_service->initVisualizationCreator();
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Remove all demo data.
+ */
+function re_mgr_demo_uninstall(): void {
+  /* Delete demo presentation blocks */
+  $demo_blocks = [];
+  $placed_re_mgr_blocks = \Drupal::service('entity_type.manager')
+    ->getStorage('block')
+    ->loadByProperties(['plugin' => 're_mgr_presentation']);
+
+  foreach ($placed_re_mgr_blocks as $block_id => $block) {
+    /** @var array */
+    $block_settings = $block->get('settings');
+    $visualization_plugin_settings = $block_settings['visualization']['settings'];
+    $starting_entity_type = $visualization_plugin_settings['start_from_building'] ? 're_mgr_building' : 're_mgr_estate';
+    $starting_entity_id = $visualization_plugin_settings['start_from_building'] ? $visualization_plugin_settings['starting_building'] : $visualization_plugin_settings['starting_estate'];
+    $webform_id = $visualization_plugin_settings['webform'];
+
+    if ($webform_id === 'ask_for_offer_re_mgr_demo') {
+      $demo_blocks[$block_id] = $block;
+      continue;
+    }
+
+    if (!empty($starting_entity_id)) {
+      /** @var \Drupal\re_mgr\Entity\EntityInterface */
+      $starting_entity = \Drupal::service('entity_type.manager')
+        ->getStorage($starting_entity_type)
+        ->load($starting_entity_id);
+      $starting_entity_bundle_type = $starting_entity->get('type')->target_id;
+
+      if ($starting_entity_bundle_type === 'demo') {
+        $demo_blocks[$block_id] = $block;
+      }
+    }
+  }
+
+  foreach ($demo_blocks as $block) {
+    $block->delete();
+  }
+
+  /* Remove all demo content */
+  foreach (array_reverse(\Drupal::service('re_mgr.entity_service')::ENTITY_LIST) as $type) {
+    $entity_storage = \Drupal::service('entity_type.manager')->getStorage($type);
+    $entities = $entity_storage->loadByProperties(['type' => 'demo']);
+    $entity_storage->delete($entities);
+  }
+
+  /* Remove all demo media */
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('re_mgr_visualization')) {
+    \Drupal::service('re_mgr_demo.create_data')->removeAllDemoMedia();
+  }
+}

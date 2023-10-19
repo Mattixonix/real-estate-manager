@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.re_mgr_building.field_re_mgr_image
+    - image.style.medium
+    - media.type.re_mgr_building
+  module:
+    - image
+  enforced:
+    module:
+      - re_mgr_visualization
+id: media.re_mgr_building.media_library
+targetEntityType: media
+bundle: re_mgr_building
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_re_mgr_image: true
+  langcode: true
+  name: true
+  uid: true

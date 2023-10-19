@@ -1,0 +1,117 @@
+{#
+/**
+ * Theme for visualization plugin content.
+ *
+ * Variables:
+ * - block_id: Block id.
+ * - enity_description: Entity description entity view.
+ * - guide: Text with information how to use current stage.
+ * - image: Stage main image.
+ * - paths: Svg related paths to image.
+ * - back_btn: Back button.
+ * - legend: Legend with available statuses.
+ * - tooltip_data: Tooltip data.
+ * - webform: Contact webform.
+ */
+#}
+<div 
+  class="visualization-svg-container {{ image.entity_keyword ~ '-stage' }}"
+  id="{{ 'visualization-svg-container--' ~ block_id }}"
+  data-front-url="{{ front_url }}"
+  data-block-id="{{ block_id }}"
+>
+
+  {# Display navigation #}
+  {% if navigation %}
+    {{ navigation }}
+  {% endif %}
+
+  <div class="visualization-main-content">
+
+    {# Display entity description. #}
+    {% if image.entity_keyword == 'flat' and image.sell_entity_keyword == 'flat' %}
+      <div class="entity-description">
+        {{ entity_description }}
+      </div>
+    {% endif %}
+
+    {# Display visualization guide. Don't show up on last stage. #}
+    {{ guide }}
+
+    <svg 
+      viewBox="0 0 {{ image.width }} {{ image.height }}"
+      data-entity-keyword="{{ image.entity_keyword }}"
+      data-entity-id="{{ image.entity_id }}"
+      data-path-fill="{{ image.path_fill }}"
+      data-path-target-opacity="{{ image.path_target_opacity }}"
+      data-starting-entity-keyword="{{ image.starting_entity_keyword }}"
+      data-sell-entity-keyword="{{ image.sell_entity_keyword }}"
+      data-webform-id="{{ image.webform_id }}"
+      {% if image.style %} data-image-style="{{ image.style }}"> {% endif %}
+    >
+      <image width="100%" href="{{ image.url }}"></image>
+      {% for id, path in paths %}
+        {% if image.entity_keyword == 'estate' and image.sell_entity_keyword == 'building' %}
+          <path
+            class="{{ path.status }} with-status building"
+            d="{{ path.coordinates }}"
+            fill="{{ path.fill }}"
+            fill-opacity="{{ image.path_target_opacity }}"
+            data-related-entity-id="{{ id }}"
+          />
+        {% elseif image.entity_keyword != 'floor' %}
+          <path 
+            d="{{ path }}"
+            fill="#{{ image.path_fill }}"
+            fill-opacity="0"
+            data-related-entity-id="{{ id }}"
+          />
+        {% elseif image.entity_keyword == 'floor' %}
+          <path
+            class="{{ path.status }} with-status flat"
+            d="{{ path.coordinates }}"
+            fill="{{ path.fill }}"
+            fill-opacity="{{ image.path_target_opacity }}"
+            data-related-entity-id="{{ id }}"
+          />
+        {% endif %}
+      {% endfor %}
+    </svg>
+
+    {# Display sell entity webform #}
+    {% if image.entity_keyword == 'flat' and image.sell_entity_keyword == 'flat' %}
+      <div class="visualization-webform">
+        {{ webform }}
+      </div>
+    {% endif %}
+
+    {# Display description button for building stage if it is for sale. #}
+    {% if image.entity_keyword == 'building' or image.entity_keyword == 'floor' and image.sell_entity_keyword == 'building' and description_btn %}
+      {{ description_btn }}
+    {% endif %}
+
+    {# Display back button. #}
+    {% if image.entity_keyword != image.starting_entity_keyword and back_btn %}
+      {{ back_btn }}
+    {% endif %}
+
+    {# Display ask for offer button. #}
+    {% if image.sell_entity_keyword == 'building' and image.entity_keyword == 'building' or image.entity_keyword == 'floor' and ask_for_offer_btn %}
+      {{ ask_for_offer_btn }}
+    {% endif %}
+
+    {# 
+      Display floor or estate legend with available entities statuses and print entities
+      information for tooltip.
+    #}
+    {% if legend %}
+      {{ legend }}
+
+      {% for id, entity in tooltip_data %}
+        <div id="{{ 'entity-id-' ~ id }}" class="entity-information" style="display: none;">
+          {{ entity }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,95 @@
+# Global links.
+re_mgr.admin:
+  title: 'Real estate manager'
+  description: 'Manage Real estate manager module here.'
+  parent: 'system.admin'
+  route_name: 're_mgr.admin'
+
+re_mgr.content:
+  title: 'Content'
+  title_context: 'Real estate manager menu'
+  description: 'Content of Real estate manager module entities.'
+  parent: 're_mgr.admin'
+  route_name: 're_mgr.content'
+  weight: 1
+
+re_mgr.configuration:
+  title: 'Configuration'
+  description: 'Configure Real estate manager module here.'
+  parent: 're_mgr.admin'
+  route_name: 're_mgr.configuration'
+  weight: 2
+
+re_mgr.configuration.entity:
+  title: 'Entities configuration'
+  description: 'Configure Real estate manager module entities settings and structure.'
+  parent: 're_mgr.configuration'
+  route_name: 're_mgr.configuration.entities'
+  weight: 1
+
+re_mgr.configuration.purge:
+  title: 'Purge data'
+  description: 'Purge all Real estate manager module data.'
+  parent: 're_mgr.configuration'
+  route_name: 're_mgr.purge'
+  weight: 2
+
+# Estate entity links.
+entity.re_mgr_estate.collection:
+  title: 'Estates'
+  description: 'Manage estate collection.'
+  parent: 're_mgr.content'
+  route_name: 'entity.re_mgr_estate.collection'
+  weight: 1
+
+entity.re_mgr_estate_type.collection:
+  title: 'Estate types'
+  description: 'Allows to manage estate entity types.'
+  parent: 're_mgr.configuration.entity'
+  route_name: 'entity.re_mgr_estate_type.collection'
+  weight: 1
+
+# Building entity links.
+entity.re_mgr_building.collection:
+  title: 'Buildings'
+  description: 'Manage building collection.'
+  parent: 're_mgr.content'
+  route_name: 'entity.re_mgr_building.collection'
+  weight: 2
+
+entity.re_mgr_building_type.collection:
+  title: 'Building types'
+  description: 'Allows to manage building entity types.'
+  parent: 're_mgr.configuration.entity'
+  route_name: 'entity.re_mgr_building_type.collection'
+  weight: 2
+
+# Floor entity links.
+entity.re_mgr_floor.collection:
+  title: 'Floors'
+  description: 'Manage floor collection.'
+  parent: 're_mgr.content'
+  route_name: 'entity.re_mgr_floor.collection'
+  weight: 3
+
+entity.re_mgr_floor_type.collection:
+  title: 'Floor types'
+  description: 'Allows to manage floor entity types.'
+  parent: 're_mgr.configuration.entity'
+  route_name: 'entity.re_mgr_floor_type.collection'
+  weight: 3
+
+# Flat entity links.
+entity.re_mgr_flat.collection:
+  title: 'Flats'
+  description: 'Manage flats collection.'
+  parent: 're_mgr.content'
+  route_name: 'entity.re_mgr_flat.collection'
+  weight: 4
+
+entity.re_mgr_flat_type.collection:
+  title: 'Flat types'
+  description: 'Allows to manage flats entity types.'
+  parent: 're_mgr.configuration.entity'
+  route_name: 'entity.re_mgr_flat_type.collection'
+  weight: 4

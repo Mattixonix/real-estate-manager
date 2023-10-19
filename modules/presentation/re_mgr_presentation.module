@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contain all hook functions for Real estate manager Presentation module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ *
+ * Add module themes.
+ */
+function re_mgr_presentation_theme(): array {
+  return [
+    'presentation_block' => [
+      'variables' => [
+        'tabs' => NULL,
+        'content' => NULL,
+        'block_id' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add extra submit method on purge data.
+ */
+function re_mgr_presentation_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  /* Delete all embedded blocks */
+  if ($form_id === 're_mgr_data_purge') {
+    $form['#submit'][] = 're_mgr_presentation_purge_data_submit';
+  }
+}
+
+/**
+ * Custom submit callback on purge data, use to delete all presentation blocks.
+ */
+function re_mgr_presentation_purge_data_submit(array &$form, FormStateInterface $form_state): void {
+  $placed_re_mgr_blocks = \Drupal::service('entity_type.manager')
+    ->getStorage('block')
+    ->loadByProperties(['plugin' => 're_mgr_presentation']);
+
+  foreach ($placed_re_mgr_blocks as $block) {
+    $block->delete();
+  }
+}

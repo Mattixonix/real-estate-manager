@@ -1,0 +1,13 @@
+name: Real estate manager
+type: module
+description: Provides additional functionalities for real estate management.
+core_version_requirement: ^10
+package: Real estate
+configure: re_mgr.admin
+
+dependencies:
+  - entity:entity
+
+project: re_mgr
+'interface translation project': re_mgr
+'interface translation server pattern': translations://%project.%language.po

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - re_mgr
+id: re_mgr_flat_delete_action
+label: 'Delete flat'
+type: re_mgr_flat
+plugin: entity:delete_action:re_mgr_flat
+configuration: {  }

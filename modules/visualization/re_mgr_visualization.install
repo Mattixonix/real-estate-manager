@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Handles Real estate manager Visualization installation and upgrade tasks.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Create and add coordinates and main image fields to Real estate manager
+ * entities.
+ */
+function re_mgr_visualization_install(): void {
+  $coordinates_field_service = \Drupal::service('re_mgr_visualization.coordinates_field_service');
+  $coordinates_field_service->createCoordinatesField();
+
+  $main_image_field_service = \Drupal::service('re_mgr_visualization.main_image_field_service');
+  $main_image_field_service->createMainImageField();
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Delete coordinates and main image fields from Real estate managers entities.
+ */
+function re_mgr_visualization_uninstall(): void {
+  /* Delete coordinates field from Real estate manager entities. */
+  $coordinates_field_service = \Drupal::service('re_mgr_visualization.coordinates_field_service');
+  $coordinates_field_service->deleteCoordinatesField();
+
+  $main_image_field_service = \Drupal::service('re_mgr_visualization.main_image_field_service');
+  $main_image_field_service->deleteMainImageField();
+
+  /* Delete all media types related to module. */
+  $result = \Drupal::entityQuery('media')
+    ->accessCheck(TRUE)
+    ->condition('bundle', [
+      're_mgr_estate',
+      're_mgr_building',
+      're_mgr_floor',
+      're_mgr_flat',
+    ], 'IN')
+    ->execute();
+
+  $storage_handler = \Drupal::entityTypeManager()->getStorage('media');
+  $media = $storage_handler->loadMultiple($result);
+  $storage_handler->delete($media);
+}

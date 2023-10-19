@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - re_mgr.re_mgr_estate.default
+id: re_mgr_estate.default.default
+targetEntityType: re_mgr_estate
+bundle: default
+mode: default
+content:
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  uid: true

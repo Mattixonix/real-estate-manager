@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.re_mgr_building.field_re_mgr_image
+    - image.style.large
+    - media.type.re_mgr_building
+  module:
+    - image
+  enforced:
+    module:
+      - re_mgr_visualization
+id: media.re_mgr_building.default
+targetEntityType: media
+bundle: re_mgr_building
+mode: default
+content:
+  field_re_mgr_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

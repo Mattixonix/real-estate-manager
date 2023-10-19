@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - re_mgr
+id: re_mgr_building_publish_action
+label: 'Publish building'
+type: re_mgr_building
+plugin: entity:publish_action:re_mgr_building
+configuration: {  }

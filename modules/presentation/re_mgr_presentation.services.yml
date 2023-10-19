@@ -1,0 +1,8 @@
+services:
+  plugin.manager.re_mgr_presentation:
+    class: Drupal\re_mgr_presentation\Manager\PresentationManager
+    parent: default_plugin_manager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler']
+
+  re_mgr_presentation.block_builder_service:
+    class: Drupal\re_mgr_presentation\Service\PresentationBlockBuilderService

@@ -1,0 +1,51 @@
+# Estate entity action links.
+re_mgr.re_mgr_estate.add:
+  route_name: 'entity.re_mgr_estate.add_page'
+  title: 'Add estate'
+  appears_on:
+    - entity.re_mgr_estate.collection
+
+re_mgr.re_mgr_estate_type.add:
+  route_name: 'entity.re_mgr_estate_type.add_form'
+  title: 'Add estate type'
+  appears_on:
+    - entity.re_mgr_estate_type.collection
+
+# Building entity action links.
+re_mgr.re_mgr_building.add:
+  route_name: 'entity.re_mgr_building.add_page'
+  title: 'Add building'
+  appears_on:
+    - entity.re_mgr_building.collection
+
+re_mgr.re_mgr_building_type.add:
+  route_name: 'entity.re_mgr_building_type.add_form'
+  title: 'Add building type'
+  appears_on:
+    - entity.re_mgr_building_type.collection
+
+# Floor entity action links.
+re_mgr.re_mgr_floor.add:
+  route_name: 'entity.re_mgr_floor.add_page'
+  title: 'Add floor'
+  appears_on:
+    - entity.re_mgr_floor.collection
+
+re_mgr.re_mgr_floor_type.add:
+  route_name: 'entity.re_mgr_floor_type.add_form'
+  title: 'Add floor type'
+  appears_on:
+    - entity.re_mgr_floor_type.collection
+
+# Flat entity action links.
+re_mgr.re_mgr_flat.add:
+  route_name: 'entity.re_mgr_flat.add_page'
+  title: 'Add flat'
+  appears_on:
+    - entity.re_mgr_flat.collection
+
+re_mgr.re_mgr_flat_type.add:
+  route_name: 'entity.re_mgr_flat_type.add_form'
+  title: 'Add flat type'
+  appears_on:
+    - entity.re_mgr_flat_type.collection

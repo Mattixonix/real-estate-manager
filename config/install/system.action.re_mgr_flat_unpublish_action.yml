@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - re_mgr
+id: re_mgr_flat_unpublish_action
+label: 'Unpublish flat'
+type: re_mgr_flat
+plugin: entity:unpublish_action:re_mgr_flat
+configuration: {  }

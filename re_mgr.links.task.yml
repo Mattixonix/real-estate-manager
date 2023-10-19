@@ -1,0 +1,126 @@
+# Entities edit tab.
+re_mgr.re_mgr_estate.edit:
+  route_name: entity.re_mgr_estate_type.edit_form
+  title: Edit
+  base_route: entity.re_mgr_estate_type.edit_form
+
+re_mgr.re_mgr_building.edit:
+  route_name: entity.re_mgr_building_type.edit_form
+  title: Edit
+  base_route: entity.re_mgr_building_type.edit_form
+
+re_mgr.re_mgr_floor.edit:
+  route_name: entity.re_mgr_floor_type.edit_form
+  title: Edit
+  base_route: entity.re_mgr_floor_type.edit_form
+
+re_mgr.re_mgr_flat.edit:
+  route_name: entity.re_mgr_flat_type.edit_form
+  title: Edit
+  base_route: entity.re_mgr_flat_type.edit_form
+
+# Navigation between types.
+re_mgr.entity_types.estate_types:
+  route_name: entity.re_mgr_estate_type.collection
+  title: Estate types
+  base_route: entity.re_mgr_estate_type.collection
+
+re_mgr.entity_types.building_types:
+  route_name: entity.re_mgr_building_type.collection
+  title: Building types
+  base_route: entity.re_mgr_estate_type.collection
+
+re_mgr.entity_types.floor_types:
+  route_name: entity.re_mgr_floor_type.collection
+  title: Floor types
+  base_route: entity.re_mgr_estate_type.collection
+
+re_mgr.entity_types.flat_types:
+  route_name: entity.re_mgr_flat_type.collection
+  title: Flat types
+  base_route: entity.re_mgr_estate_type.collection
+
+# Navigation between content.
+re_mgr.entity_content.estate:
+  route_name: entity.re_mgr_estate.collection
+  title: Estates
+  base_route: entity.re_mgr_estate.collection
+
+re_mgr.entity_content.building:
+  route_name: entity.re_mgr_building.collection
+  title: Buildings
+  base_route: entity.re_mgr_estate.collection
+
+re_mgr.entity_content.floor:
+  route_name: entity.re_mgr_floor.collection
+  title: Floors
+  base_route: entity.re_mgr_estate.collection
+
+re_mgr.entity_content.flat:
+  route_name: entity.re_mgr_flat.collection
+  title: Flats
+  base_route: entity.re_mgr_estate.collection
+
+# Estate tabs
+entity.re_mgr_estate.canonical:
+  route_name: entity.re_mgr_estate.canonical
+  base_route: entity.re_mgr_estate.canonical
+  title: 'View'
+
+entity.re_mgr_estate.edit_form:
+  route_name: entity.re_mgr_estate.edit_form
+  base_route: entity.re_mgr_estate.canonical
+  title: Edit
+
+entity.re_mgr_estate.delete_form:
+  route_name: entity.re_mgr_estate.delete_form
+  base_route: entity.re_mgr_estate.canonical
+  title: Delete
+
+# Building tabs
+entity.re_mgr_building.canonical:
+  route_name: entity.re_mgr_building.canonical
+  base_route: entity.re_mgr_building.canonical
+  title: 'View'
+
+entity.re_mgr_building.edit_form:
+  route_name: entity.re_mgr_building.edit_form
+  base_route: entity.re_mgr_building.canonical
+  title: Edit
+
+entity.re_mgr_building.delete_form:
+  route_name: entity.re_mgr_building.delete_form
+  base_route: entity.re_mgr_building.canonical
+  title: Delete
+
+# Floor tabs
+entity.re_mgr_floor.canonical:
+  route_name: entity.re_mgr_floor.canonical
+  base_route: entity.re_mgr_floor.canonical
+  title: 'View'
+
+entity.re_mgr_floor.edit_form:
+  route_name: entity.re_mgr_floor.edit_form
+  base_route: entity.re_mgr_floor.canonical
+  title: Edit
+
+entity.re_mgr_floor.delete_form:
+  route_name: entity.re_mgr_floor.delete_form
+  base_route: entity.re_mgr_floor.canonical
+  title: Delete
+
+# Flat tabs
+entity.re_mgr_flat.canonical:
+  route_name: entity.re_mgr_flat.canonical
+  base_route: entity.re_mgr_flat.canonical
+  title: 'View'
+
+entity.re_mgr_flat.edit_form:
+  route_name: entity.re_mgr_flat.edit_form
+  base_route: entity.re_mgr_flat.canonical
+  title: Edit
+
+entity.re_mgr_flat.delete_form:
+  route_name: entity.re_mgr_flat.delete_form
+  base_route: entity.re_mgr_flat.canonical
+  title: Delete
