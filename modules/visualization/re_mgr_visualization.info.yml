@@ -1,8 +1,8 @@
-name: Real estate manager Visualization
+name: Real Estate Manager Visualization
 type: module
 description: Provides a block responsible for presentation data in visualization way.
 core_version_requirement: ^10
-package: Real estate
+package: Real Estate
 
 dependencies:
   - re_mgr:re_mgr

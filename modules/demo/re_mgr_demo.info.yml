@@ -1,8 +1,8 @@
-name: Real estate manager Demo
+name: Real Estate Manager Demo
 type: module
 description: Provides demo data for module.
 core_version_requirement: ^10
-package: Real estate
+package: Real Estate
 
 dependencies:
   - re_mgr:re_mgr

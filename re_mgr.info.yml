@@ -1,8 +1,8 @@
-name: Real estate manager
+name: Real Estate Manager
 type: module
 description: Provides additional functionalities for real estate management.
 core_version_requirement: ^10
-package: Real estate
+package: Real Estate
 configure: re_mgr.admin
 
 dependencies:
