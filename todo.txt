@@ -1,0 +1,31 @@
+ROZDZIAŁ I (Encje)
+ROZDZIAŁ II (Testowe dane)
+ROZDZIAŁ III (Manager pluginów)
+ROZDZIAŁ IV (Blok wyświetlający osiedle)
+ROZDZIAŁ V (Blok wyszukiwarki)
+- wyszukuje mieszkania, opcjonalnie budynki
+- do wyszukiwarki można dodawać pola typu int służące jako filtry
+- sprawdź czy nie da się czegoś takiego zrobić na widoku
+
+ROZDZIAŁ VI (Blok okolice)
+- nazwa 'neighborhood'
+- jest to mapa osiedla i jego okolic
+- oparta na Leaflet
+- można dodawać punkty na mapie
+
+HEAVEN <3
+- ogarnij jak zrobić ajax w formularzu pluginów 
+	* spróbuj Vue
+	* zrób jak style obrazka (dodajesz wtyczki przyciskiem dodaj a później układasz ich kolejność)
+
+- napisz testy
+	* sprawdź po co się pisze testy i do jakich funkcji
+
+- docker
+	* https
+	* mailhog
+	* custom drupal from php
+
+- wrzuć moduł na drupal.org
+	* wstawić tłumaczenia na localize.drupal.org
+  * ogarnąć fotkę na profile github, drupal i gmail coś z nazwą firmy może duszek jakiś

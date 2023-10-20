@@ -7,7 +7,3 @@ configure: re_mgr.admin
 
 dependencies:
   - entity:entity
-
-project: re_mgr
-'interface translation project': re_mgr
-'interface translation server pattern': translations://%project.%language.po
