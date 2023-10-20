@@ -269,6 +269,7 @@
         </li>
       </ul>
     </li>
+    <li>
       34 Floors
       <ul>
         <li>
@@ -278,6 +279,7 @@
           2 related to solo Building
         </li>
       </ul>
+    </li>
     <li>
       128 Flats
       <ul>
