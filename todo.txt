@@ -27,5 +27,7 @@ HEAVEN <3
 	* custom drupal from php
 
 - wrzuć moduł na drupal.org
-	* wstawić tłumaczenia na localize.drupal.org
-  * ogarnąć fotkę na profile github, drupal i gmail coś z nazwą firmy może duszek jakiś
+	* ogarnąć fotkę na profile github, drupal i gmail coś z nazwą firmy może duszek jakiś
+	* usuń stare konto github
+	* dodaj tarcze
+	* wstawić tłumaczenia na localize.drupal.org	
