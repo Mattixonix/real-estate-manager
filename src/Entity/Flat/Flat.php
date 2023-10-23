@@ -12,7 +12,7 @@ use Drupal\user\EntityOwnerTrait;
  *
  * @ContentEntityType(
  *   id = "re_mgr_flat",
- *   label = @Translation("Flat"),
+ *   label = @Translation("Flat", context = "Real estate"),
  *   label_collection = @Translation("Flats"),
  *   label_singular = @Translation("flat"),
  *   label_plural = @Translation("flats"),

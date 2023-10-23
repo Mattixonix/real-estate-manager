@@ -512,7 +512,7 @@ class VisualizationService implements VisualizationServiceInterface {
     if ($sell_entity_keyword === 'flat') {
       $navigation['navigation']['select_flat'] = [
         '#type' => 'select',
-        '#title' => $this->t('Flat'),
+        '#title' => $this->t('Flat', [], ['context' => "Real estate"]),
         '#options' => $navigation_options['flats'],
         '#value' => $navigation_options['default_flat'],
         '#attributes' => ['class' => ['flat']],

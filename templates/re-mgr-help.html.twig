@@ -27,7 +27,7 @@
     <li>{{ 'Estate'|t }}</li>
     <li>{{ 'Building'|t }}</li>
     <li>{{ 'Floor'|t }}</li>
-    <li>{{ 'Flat'|t }}</li>
+    <li>{{ 'Flat'|t({}, {'context' : 'Real estate'}) }}</li>
   </ul>
   {{ 'Each of them has the ability to full modification through the entity types,
   fields, form and view display, publication and revision system. As mention
