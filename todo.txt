@@ -28,3 +28,7 @@ HEAVEN <3
 
 - wrzuć moduł na drupal.org
 	* dodaj tarcze (poczekaj do 30 i wydaj wersję stable, poproś o sprawdzenie bezpieczeństwa, później zweryfikuj tłumaczenia)
+	* rozpowszechnij
+		- Vobacom (Michał, Przemek, Kuba, Paweł -> Grzegorzowi i Marcinowi, Artur, Michał Janiec, Janek, Przemek, Szymon)
+		- Smartbees (Adam, Gracjan, Filip, Aleks, Bronek, Krystian, Kewin, Michał, Krzysztow, Szymon, Robert, Denis, Mateusz)
+		- Droptica (Agata Charęza, Weronika Głogowska, Gruby co mnie nie lubi i ten gościu co robi tutoriale)
