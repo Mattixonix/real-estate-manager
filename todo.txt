@@ -27,4 +27,4 @@ HEAVEN <3
 	* custom drupal from php
 
 - wrzuć moduł na drupal.org
-	* dodaj tarcze
+	* dodaj tarcze (poczekaj do 30 i wydaj wersję stable, poproś o sprawdzenie bezpieczeństwa, później zweryfikuj tłumaczenia)
