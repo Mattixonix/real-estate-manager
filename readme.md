@@ -1,7 +1,7 @@
 <h1>Real Estate Manager</h1>
 
 <p>
-  The Real Estate Manager module provides system for managing and additionally 
+  The Real Estate Manager module provides a system for managing and additionally
   presenting any real estate in multiple ways.
 </p>
 <p>
@@ -11,79 +11,80 @@
     <li>Visualization</li>
     <li>Demo</li>
   </ul>
-  This module structure gives you possibility, to install only that what is
+  This module structure gives the user the possibility to install what is
   needed.
 </p>
 <h2>Base module</h2>
 <p>
-  Real Estate Manager in base version, provides related entities capable of
-  real estate data storage.</br>
-  We distinguish 4 entities:
+  Real Estate Manager in base version, provides related entities capable of real
+  estate data storage.</br>
+  The module has 4 entities:
   <ul>
     <li>Estate</li>
     <li>Building</li>
     <li>Floor</li>
     <li>Flat</li>
   </ul>
-  Each of them has the ability to full modification through the entity types,
-  fields, form and view display, publication and revision system. As mention
-  before, content of this entities create the pyramid structure, starting from
+  Each of them have the ability to be fully modified through the entity types,
+  fields, form and view display, publication and revision system. As mentioned
+  before, content of these entities create the pyramid structure, starting from
   Estate and ending on Flat.
 </p>
 <p>
   <b>Example add stages without extra fields:</b>
   <ol>
     <li>
-      We start by create an Estate.
+      Start by create an Estate.
       <ul>
-        <li>Only name is needed.</li>
+        <li>Only a name is needed.</li>
       </ul>
     </li>
     <li>
-      Then we create a Building. 
+      Then create a Building.
       <ul>
         <li>
-          Beyond the name is the possibility to choose
-          parent Estate, this is how we define its relation.
+          Beyond the name, there is the possibility to choose a parent Estate,
+          this is how relation is defined.
         </li> 
         <li>
-          Relation is optional, because Building can exist solo without Estate.
+          Relation is optional, because the Building can exist alone without the
+          Estate.
         </li>
         <li>
-          There is a status field which we specify whether it is available,
-          reserved or sold. It's optional because Buildings can but they don't
-          have to be for sale.
-        </li>
-      </ul>
-    </li>
-    <li>
-      Then we create a Floor.
-      <ul>
-        <li>
-          Beyond the name it's required to choose parent Building.
-        </li>
-        <li>
-          Relation is required because Floor can only exists in Building.
-        </li>
-        <li>
-          Additionally there is an option to set Floor as final. Thanks to this,
-          the entity will not be displayed in the results looking for parent
-          entity in Flat. This works only with module field widget.
+          There is a status field where the user can specify whether it is
+          available, reserved or sold. It's optional because Building entities
+          can but they don't have to be for sale.
         </li>
       </ul>
     </li>
     <li>
-      Finally we create a Flat.
+      Then create a Floor.
       <ul>
         <li>
-          Beyond the name it's required to choose parent Floor.
+          Beyond the name, it's required to choose a parent Building.
         </li>
         <li>
-          Relation is required because Flat can only exists in Floor.
+          Relation is required because the Floor can only exist in the Building.
         </li>
         <li>
-          There is a same status field as in Building, but it's required because
-          Flats are always for sale.
+          Additionally, there is an option to set the Floor as final. Thanks to
+          this, the entity will not be displayed in the results looking for a
+          parent entity in Flat. This works only with the module field widget.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Finally create a Flat.
+      <ul>
+        <li>
+          Beyond the name, it's required to choose a parent Floor.
+        </li>
+        <li>
+          Relation is required because Flat can only exist in the Floor.
+        </li>
+        <li>
+          There is the same status field as in Building, but it's required
+          because the Flat entities are always for sale.
         </li>
       </ul>
     </li>
@@ -93,54 +94,52 @@
   <b>Entity management is supported by many facilities:</b>
   <ul>
     <li>
-      Field widget "Realestate Manager Entity Reference Autocomplete", is used
-      as default in each module entity. It's base functionality is to modify
-      results, by display next to entity name its parent entity name. Also it's
-      removing final floors from results.
+      Field widget "Real Estate Manager Entity Reference Autocomplete", is used
+      as default in each module entity. Its base functionality is to modify
+      results, by displaying next to entity name its parent entity name. Also
+      it's removing final floors from results.
     </li>
     <li>
       If the View module is enabled, there are prepared views with sorting,
       filtering, multiple publish and delete options.
     </li>
     <li>
-      Views also adds to entities list operation, which will display all child
-      entities with all operations mention above.
+      Views also adds to entities, list operation, which will display all child
+      entities with all operations mentioned above.
     </li>
     <li>
       Navigation between content and types through tabs.
     </li>
     <li>
-      Finally the option "Clear data" allows to remove all module data in one
-      place, that prepare module to uninstall. 
+      Finally the option "Clear data" allows the user to remove all module data
+      in one place, which will prepare the module to uninstall.
     </li>
   </ul>
 </p>
 <h2>Presentation module</h2>
 <p>
-  Module provide clean block, used to presenting real estates in any way,
-  through additional plugins. </br>
-  Module has plugin manager, which gather all plugins and display them in a
-  predetermined way. This is designed in such a way that external modules can
-  create their own plugins. Block configuration form has tabs, each for every
-  plugin, allowing only selected ones to be included. Each enabled plugin have
-  its own settings form and generates its content base on them. Additionally,
-  the order of plugins is configurable.
+  Module provides a clean block, used to present real estates in any way,
+  through additional plugins. Module has a plugin manager, which gathers all
+  plugins and displays them in a predetermined way. This is designed in such a
+  way that external modules can create their own plugins. Block configuration
+  form has tabs, each for every plugin, allowing only selected ones to be
+  included. Each enabled plugin has its own settings form and generates its
+  content based on them. Additionally, the order of plugins is configurable.
 </p>
 <p>
-  Block will display two sections - the tabs with list of enabled plugins and
-  first chosen tab. Switching a tab will change the associated content by
-  ajax reloading. The block must have at least one plugin enabled to be
-  displayed. If only one plugin is enabled, tabs will not be displayed. The
-  block can be placed repeatedly in different places on the page in any
-  configuration.
+  Block will display two sections - the tabs with a list of enabled plugins and
+  first chosen tab. Switching a tab will change the associated content by ajax
+  reloading. The block must have at least one plugin enabled to be displayed.
+  If only one plugin is enabled, tabs will not be displayed. The block can be
+  placed repeatedly in different places on the page in any configuration.
 </p>
 <h2>Visualization module</h2>
 <p>
-  A module that provides the Presentation module plugin. The main task
-  of the plugin is displaying data in an attractive visual way to the end user
-  and finally contact in order to obtain a lead. It also provides a coordinate
+  A module that provides the Presentation module plugin. The main task of the
+  plugin is displaying data in an attractive visual way to the end user and
+  finally contact in order to obtain a lead. It also provides a coordinate
   field to every entity type except Estate because it has no parent entity.
-  Coordinates are a text field into which the attribute value should be pasted 
+  Coordinates are a text field into which the attribute value should be pasted
   "d" path, previously prepared by the graphic designer, to be displayed in SVG
   embedded in the main image of the parent entity.
 </p>
@@ -149,7 +148,7 @@
   example of Estate <- Building:</b>
   <ul>
     <li>
-      The graphic designer has a photo of a Estate with Buildings.
+      The graphic designer has a photo of an Estate with Buildings.
     </li>
     <li>
       Creates an SVG with a size equal to this Estate photo.
@@ -171,47 +170,48 @@
     </li>
     <li>
       Creates Building entities by adding their main photos (also provided by
-      graphics) and the "d" attribute values are placed in the coordinates field.
+      graphics) and the "d" attribute values are placed in the coordinates
+      field.
     </li>
   </ul>
 </p>
 <p>
-  After such a procedure, displaying the created Estate, end user will be able
-  to click on the building and go through it to its display stage. This action
-  must be repeated on all entities.
+  After such a procedure, displaying the created Estate, the end user will be
+  able to click on the building and go through it to its display stage. This
+  action must be repeated on all entities.
 </p>
 <p>
   <b>Plugin available settings</b>:
   <ol>
     <li>
-      The first setting is to decide what type of entity we start displaying from
-      Estate or Building?
+      The first setting is to decide what type of entity the block should start
+      displaying from Estate or Building?
     </li>
     <li>
-      Then we select a given entity depending on the selection in the first point.
+      Then select a given entity depending on the selection in the first point.
     </li>
     <li>
-      We decide whether Apartments or Buildings are for sale.
+      Decide whether Flats or Buildings are for sale.
     </li>
     <li>
       Select the previously created form from the Webform module for generating
       leads.
     </li>
     <li>
-      Optionally, we set the style of the main images of the entity, useful when
-      we want, e.g. format image to webp.
+      Optionally, the user can set the style of the main images of the entity,
+      useful when the user wants e.g. format image to webp.
     </li>
     <li>
-      Optionally, we select the color and/or target transparency of the displayed
-      SVG paths after hovering over them.
+      Optionally, the user selects the color and/or target transparency of the
+      displayed SVG paths after hovering over them.
     </li>
   </ol>
 </p>
 <p>
-  We will see the result in the displayed block.
+  The result will be displayed in the block.
 </p>
 <p>
-  <b>Setting example (with demo module):</b>
+  <b>The settings example (with demo module):</b>
   <ul>
     <li>
       View from estate
@@ -220,7 +220,7 @@
       Selected "Paradise" Estate
     </li>
     <li>
-      Apartments for sale
+      Flats for sale
     </li>
     <li>
       "Ask for an offer" form
@@ -234,21 +234,21 @@
   </ul>
 </p>
 <p>
-  After locating the block on the website, you will see the main photo of the
-  Paradise Estate with descriptions and the ability to choose one of 4
+  After locating the block on the website, the user will see the main photo of
+  the Paradise Estate with descriptions and the ability to choose one of 4
   buildings. Hover color and transparency are #000 / 60%. After selecting a
-  given Building, we can select one of its Floors and then one of the available
-  Flats marked with appropriate colors as described in the legend. After
-  hovering over the apartment, its short description will appear (it is possible
-  for editing in the Flat display - tooltip). Cannot select sold Flats. After
-  selecting one of the available apartments, a Flat description appears on the
-  left (Flat display - description), its main photo in the middle, and on the
-  right a form for generating leads, in this case the demo form only saves the
-  application in database, for demonstration purposes. The "Display from the
-  Building" option, allows us to skip displaying the Estate, and the "Sale
-  buildings" option, adds an ask for an offer button at the Building stage and
-  after clicking it, loads ajax modal window with a form. It also sets the final
-  stage to the Floor.
+  given Building, the user can select one of its Floors and then one of the
+  available Flats marked with appropriate colors as described in the legend.
+  After hovering over the flat, its short description will appear (it is
+  possible for editing in the Flat display - tooltip). The user cannot select
+  sold Flats. After selecting one of the available flats, a Flat description
+  appears on the left (Flat display - description), its main photo in the
+  middle, and on the right a form for generating leads, in this case the demo
+  form only saves the application in the database, for demonstration purposes.
+  The "Display from the Building" option, allows the user to skip displaying the
+  Estate, and the "Sale buildings" option, adds an ask for an offer button at
+  the Building stage and after clicking it, loads ajax modal window with a form.
+  It also sets the final stage to the Floor.
 </p>
 <h2>Demo module</h2>
 <p>
@@ -291,24 +291,25 @@
   </ul>
   <p>
     10 imperfect images generated by AI were used to create the entities. The
-    Visualization module has an additional coordinate field and if it
-    is already enabled or it is enabled later, the Demo module fills
-    these fields with the appropriate data. You can use the data by using the
-    Presentation modules block to display it or for presentation purposes.
+    Visualization module has an additional coordinate field and if it is already
+    enabled or it is enabled later, the Demo module fills these fields with the
+    appropriate data. The user can use the data by using the Presentation
+    modules block to display it or for presentation purposes.
   </p>
 </p>
 <h2>Feature of module</h2>
 <p>
-  Plan for future of this module include at least two more presentation plugins.
+  Plan for the future of this module includes at least two more presentation
+  plugins.
   <ul>
     <li>
-      First for search engine base on integer entities fields, view by jQuery UI
-      Sliders, presenting real estates as tiles.
+      First, for search engine based on integer entities fields, displayed by
+      jQuery UI Sliders, presenting real estates as tiles.
     </li>
     <li>
-      Second for diplay map of the vicinity area, with configurable points to
-      set such as restaurants, shops etc. base on Leaflet library.
+      Second, for display a map of the vicinity area, with configurable points
+      to set such as restaurants, shops etc. based on Leaflet library.
     </li>
   </ul>
-  If you want to help me on this, please contact me.
+  If you want to help me with this, please contact me.
 <p>
