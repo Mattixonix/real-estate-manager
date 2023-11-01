@@ -3,6 +3,7 @@ re_mgr_presentation.presentation_change_tab:
   defaults:
     _controller: 'Drupal\re_mgr_presentation\Controller\AjaxChangeTab::changeTab'
   requirements:
+    # Ajax callback is used by all users also anonymous, so the there is no restriction.
     _access: 'TRUE'
   options:
     parameters:

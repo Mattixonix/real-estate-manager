@@ -3,6 +3,5 @@
  * Customize toolbar by adding icon.
  */
 #toolbar-administration .toolbar-icon-re-mgr-admin::before {
-    background-image: url(../icons/house.svg);
+  background-image: url(../icons/house.svg);
 }
-

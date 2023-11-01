@@ -46,6 +46,7 @@ re_mgr.entity_autocomplete:
   defaults:
     _controller: '\Drupal\re_mgr\Controller\RealestateManagerEntityAutocompleteController::handleAutocomplete'
   requirements:
+    # There is no restriction because autocomplete needs to have access all the time. 
     _access: 'TRUE'
 
 # Estate entity routes.

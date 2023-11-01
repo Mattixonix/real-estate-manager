@@ -4,6 +4,7 @@ re_mgr_visualization.visualizations_ajax_next_step:
     _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::nextStep'
     main_image_style: NULL
   requirements:
+    # Ajax callback is used by all users also anonymous, so the there is no restriction.
     _access: 'TRUE'
   options:
     parameters:
@@ -32,6 +33,7 @@ re_mgr_visualization.visualizations_ajax_prev_step:
     _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::prevStep'
     main_image_style: NULL
   requirements:
+    # Ajax callback is used by all users also anonymous, so the there is no restriction.
     _access: 'TRUE'
   options:
     parameters:
@@ -60,6 +62,7 @@ re_mgr_visualization.visualizations_ajax_change_step:
     _controller: 'Drupal\re_mgr_visualization\Controller\AjaxVisualizationSteps::changeStep'
     main_image_style: NULL
   requirements:
+    # Ajax callback is used by all users also anonymous, so the there is no restriction.
     _access: 'TRUE'
   options:
     parameters:
