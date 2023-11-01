@@ -11,7 +11,7 @@ uid: 1
 template: false
 archive: false
 id: ask_for_offer_re_mgr_demo
-title: 'Ask for offer (Real estate manager demo)'
+title: 'Ask for offer (Real Estate Manager demo)'
 description: 'Used by Visualization plugin in Presentation block.'
 categories: {  }
 elements: |-

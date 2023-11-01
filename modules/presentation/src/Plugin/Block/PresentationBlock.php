@@ -11,12 +11,12 @@ use Drupal\re_mgr_presentation\Service\PresentationBlockBuilderServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Real estate manager Presentation block.
+ * Provides a Real Estate Manager Presentation block.
  *
  * @Block(
  *   id = "re_mgr_presentation",
- *   admin_label = @Translation("Real estate manager presentation"),
- *   category = @Translation("Real estate")
+ *   admin_label = @Translation("Real Estate Manager Presentation"),
+ *   category = @Translation("Real Estate")
  * )
  */
 class PresentationBlock extends BlockBase implements ContainerFactoryPluginInterface {

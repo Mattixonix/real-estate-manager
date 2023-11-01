@@ -3,7 +3,7 @@
 namespace Drupal\re_mgr\Entity;
 
 /**
- * Provide base const data for operations on Real estate manager entities.
+ * Provide base const data for operations on Real Estate Manager entities.
  */
 trait EntityBaseDataTrait {
 

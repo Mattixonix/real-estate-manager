@@ -20,7 +20,7 @@ class CreatorService implements CreatorServiceInterface {
   use StringTranslationTrait;
 
   /**
-   * Real estate manager images name.
+   * Real Estate Manager images name.
    */
   const IMAGES_NAME = [
     'estate',
@@ -36,7 +36,7 @@ class CreatorService implements CreatorServiceInterface {
   ];
 
   /**
-   * Real estate manager buildings image name.
+   * Real Estate Manager buildings image name.
    */
   const BUILDINGS_IMAGE_NAME = [
     'estate_building_a',
@@ -47,8 +47,8 @@ class CreatorService implements CreatorServiceInterface {
   ];
 
   /**
- * Real estate manager buildings image name.
- */
+   * Real Estate Manager buildings image name.
+   */
   const BUILDINGS_STATUS_MAP = [
     'estate_building_a' => 1,
     'estate_building_b' => 3,
@@ -110,7 +110,7 @@ class CreatorService implements CreatorServiceInterface {
   }
 
   /**
-   * Create real estate manager estate.
+   * Create Real Estate Manager estate.
    */
   private function createEstate(): void {
     $entity_data = [
@@ -129,7 +129,7 @@ class CreatorService implements CreatorServiceInterface {
   }
 
   /**
-   * Create real estate manager buildings.
+   * Create Real Estate Manager buildings.
    */
   private function createBuildings(): void {
 
@@ -175,7 +175,7 @@ class CreatorService implements CreatorServiceInterface {
   }
 
   /**
-   * Create real estate manager floors.
+   * Create Real Estate Manager floors.
    */
   private function createFloors(): void {
 
@@ -224,7 +224,7 @@ class CreatorService implements CreatorServiceInterface {
   }
 
   /**
-   * Create real estate manager flats.
+   * Create Real Estate Manager flats.
    */
   private function createFlats(): void {
     $estate_buildings_images = self::BUILDINGS_IMAGE_NAME;
@@ -324,7 +324,7 @@ class CreatorService implements CreatorServiceInterface {
   }
 
   /**
-   * Set real estate manager entities coordinates and main image fields.
+   * Set Real Estate Manager entities coordinates and main image fields.
    */
   private function setCoordinatesAndMainImages(): void {
 

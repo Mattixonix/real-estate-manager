@@ -9,7 +9,7 @@ use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\user\EntityOwnerInterface;
 
 /**
- * Provides an interface defining a Real estate manager entities.
+ * Provides an interface defining a Real Estate Manager entities.
  */
 interface EntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface, RevisionLogInterface, EntityPublishedInterface {
 

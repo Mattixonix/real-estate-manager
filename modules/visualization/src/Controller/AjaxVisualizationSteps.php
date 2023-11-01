@@ -23,7 +23,7 @@ class AjaxVisualizationSteps extends ControllerBase {
   protected VisualizationServiceInterface $visualizationService;
 
   /**
-   * The Real estate manager Entity service.
+   * The Real Estate Manager Entity service.
    */
   protected EntityServiceInterface $entityService;
 

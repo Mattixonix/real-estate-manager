@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contain all hook functions for Real estate manager module.
+ * Contain all hook functions for Real Estate Manager module.
  */
 
 use Drupal\Core\Entity\EntityInterface;

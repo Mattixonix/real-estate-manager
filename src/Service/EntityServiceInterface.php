@@ -21,7 +21,7 @@ interface EntityServiceInterface {
   public function getEntityKeywordFromString(string $entity_type_id): ?string;
 
   /**
-   * Get Real estate manager Entity from name and id.
+   * Get Real Estate Manager Entity from name and id.
    */
   public function getEntityFromData(string $entity_keyword, string $entity_id): ?EntityInterface;
 

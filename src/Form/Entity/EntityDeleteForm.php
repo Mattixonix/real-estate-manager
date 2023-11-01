@@ -11,7 +11,7 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a form for deleting a Real estate manager entities.
+ * Provides a form for deleting a Real Estate Manager entities.
  */
 class EntityDeleteForm extends ContentEntityDeleteForm {
 

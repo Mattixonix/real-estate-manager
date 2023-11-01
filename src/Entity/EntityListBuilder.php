@@ -12,7 +12,7 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a list controller for Real estate manager entities.
+ * Provides a list controller for Real Estate Manager entities.
  */
 class EntityListBuilder extends CoreEntityListBuilder {
 
@@ -27,7 +27,7 @@ class EntityListBuilder extends CoreEntityListBuilder {
   protected LanguageManagerInterface $languageManager;
 
   /**
-   * The Real estate manager Entity Service.
+   * The Real Estate Manager Entity Service.
    */
   protected EntityServiceInterface $entityService;
 

@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Handles Real estate manager Visualization installation and upgrade tasks.
+ * Handles Real Estate Manager Visualization installation and upgrade tasks.
  */
 
 /**
  * Implements hook_install().
  *
- * Create and add coordinates and main image fields to Real estate manager
+ * Create and add coordinates and main image fields to Real Estate Manager
  * entities.
  */
 function re_mgr_visualization_install(): void {
@@ -25,7 +25,7 @@ function re_mgr_visualization_install(): void {
  * Delete coordinates and main image fields from Real estate managers entities.
  */
 function re_mgr_visualization_uninstall(): void {
-  /* Delete coordinates field from Real estate manager entities. */
+  /* Delete coordinates field from Real Estate Manager entities. */
   $coordinates_field_service = \Drupal::service('re_mgr_visualization.coordinates_field_service');
   $coordinates_field_service->deleteCoordinatesField();
 

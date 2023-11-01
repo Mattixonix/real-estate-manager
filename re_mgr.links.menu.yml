@@ -1,35 +1,34 @@
 # Global links.
 re_mgr.admin:
-  title: 'Real estate manager'
-  description: 'Manage Real estate manager module here.'
+  title: 'Real Estate Manager'
+  description: 'Manage Real Estate Manager module here.'
   parent: 'system.admin'
   route_name: 're_mgr.admin'
 
 re_mgr.content:
   title: 'Content'
-  title_context: 'Real estate manager menu'
-  description: 'Content of Real estate manager module entities.'
+  description: 'Content of Real Estate Manager module entities.'
   parent: 're_mgr.admin'
   route_name: 're_mgr.content'
   weight: 1
 
 re_mgr.configuration:
   title: 'Configuration'
-  description: 'Configure Real estate manager module here.'
+  description: 'Configure Real Estate Manager module here.'
   parent: 're_mgr.admin'
   route_name: 're_mgr.configuration'
   weight: 2
 
 re_mgr.configuration.entity:
   title: 'Entities configuration'
-  description: 'Configure Real estate manager module entities settings and structure.'
+  description: 'Configure Real Estate Manager module entities settings and structure.'
   parent: 're_mgr.configuration'
   route_name: 're_mgr.configuration.entities'
   weight: 1
 
 re_mgr.configuration.purge:
   title: 'Purge data'
-  description: 'Purge all Real estate manager module data.'
+  description: 'Purge all Real Estate Manager module data.'
   parent: 're_mgr.configuration'
   route_name: 're_mgr.purge'
   weight: 2

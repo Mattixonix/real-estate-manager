@@ -12,7 +12,7 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a form for deleting a Real estate manager entities revision.
+ * Provides a form for deleting a Real Estate Manager entities revision.
  */
 class EntityRevisionDeleteForm extends ConfirmFormBase {
 

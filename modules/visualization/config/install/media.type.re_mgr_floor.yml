@@ -5,8 +5,8 @@ dependencies:
     module:
       - re_mgr_visualization
 id: re_mgr_floor
-label: 'Real estate manager floor'
-description: 'Used in the Real estate manager module to define the appearance of the floor.'
+label: 'Real Estate Manager floor'
+description: 'Used in the Real Estate Manager module to define the appearance of the floor.'
 source: image
 queue_thumbnail_downloads: false
 new_revision: false

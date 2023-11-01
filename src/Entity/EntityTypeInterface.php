@@ -6,7 +6,7 @@ use Drupal\Core\Entity\EntityDescriptionInterface;
 use Drupal\Core\Entity\RevisionableEntityBundleInterface;
 
 /**
- * Defines the interface for Real estate manager module entity types.
+ * Defines the interface for Real Estate Manager module entity types.
  */
 interface EntityTypeInterface extends EntityDescriptionInterface, RevisionableEntityBundleInterface {
 

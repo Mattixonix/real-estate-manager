@@ -36,7 +36,7 @@ class VisualizationService implements VisualizationServiceInterface {
   protected ConfigFactoryInterface $configFactory;
 
   /**
-   * The Real estate manager Entity Service.
+   * The Real Estate Manager Entity Service.
    */
   protected EntityServiceInterface $entityService;
 

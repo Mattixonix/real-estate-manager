@@ -75,7 +75,7 @@ class PurgeDataForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function getDescription() {
-    return $this->t("Purge all entities and related media in preparation for uninstalling the <i>Real estate manager</i> module. <strong>Remember! This action cannot be undone.</strong>");
+    return $this->t("Purge all entities and related media in preparation for uninstalling the <i>Real Estate Manager</i> module. <strong>Remember! This action cannot be undone.</strong>");
   }
 
   /**

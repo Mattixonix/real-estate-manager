@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a form for adding and editing a Real estate manager entities.
+ * Provides a form for adding and editing a Real Estate Manager entities.
  */
 class EntityForm extends ContentEntityForm {
 

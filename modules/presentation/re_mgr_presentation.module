@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contain all hook functions for Real estate manager Presentation module.
+ * Contain all hook functions for Real Estate Manager Presentation module.
  */
 
 use Drupal\Core\Form\FormStateInterface;

@@ -12,12 +12,12 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Access controller for the Real estate manager entities.
+ * Access controller for the Real Estate Manager entities.
  */
 class EntityAccessControlHandler extends CoreEntityAccessControlHandler implements EntityHandlerInterface {
 
   /**
-   * The Real estate manager Entity Service.
+   * The Real Estate Manager Entity Service.
    */
   protected EntityServiceInterface $entityService;
 

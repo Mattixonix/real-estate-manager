@@ -9,7 +9,7 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Builds the form to delete Real estate manager entity type.
+ * Builds the form to delete Real Estate Manager entity type.
  */
 class EntityTypeDeleteForm extends EntityConfirmFormBase {
 

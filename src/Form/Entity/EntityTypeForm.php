@@ -11,7 +11,7 @@ use Drupal\re_mgr\Service\EntityServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Builds the form to create Real estate manager entity type.
+ * Builds the form to create Real Estate Manager entity type.
  */
 class EntityTypeForm extends BundleEntityFormBase {
 

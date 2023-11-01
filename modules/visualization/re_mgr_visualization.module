@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contain all hook functions for Real estate manager Visualization module.
+ * Contain all hook functions for Real Estate Manager Visualization module.
  */
 
 use Drupal\Core\Form\FormStateInterface;
@@ -57,11 +57,11 @@ function re_mgr_visualization_entity_bundle_after_create(string $entity_type_id)
 /**
  * Implements hook_form_alter().
  *
- * Add states to Real estate manager Building entity on coordinates and prevent
+ * Add states to Real Estate Manager Building entity on coordinates and prevent
  * from deleting entity if it's used in any block.
  */
 function re_mgr_visualization_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
-  /* Add states to Real estate manager Building entity on coordinates. */
+  /* Add states to Real Estate Manager Building entity on coordinates. */
   if (str_starts_with($form_id, 're_mgr_building_') && isset($form['coordinates'])) {
     $form['coordinates']['#states'] = [
       'visible' => [
@@ -108,7 +108,7 @@ function re_mgr_visualization_form_alter(array &$form, FormStateInterface $form_
       }
     }
 
-    /* Check if entity is used in Real estate manager Presentation block */
+    /* Check if entity is used in Real Estate Manager Presentation block */
     if (!empty($entity_list)) {
       /** @var \Drupal\block\Entity\Block $block */
       foreach ($placed_re_mgr_blocks as $block) {

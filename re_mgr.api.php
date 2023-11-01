@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Hooks and documentation related to Real estate manager.
+ * Hooks and documentation related to Real Estate Manager.
  */
 
 /**

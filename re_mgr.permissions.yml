@@ -4,7 +4,7 @@ administer module:
   restrict access: TRUE
 
 access real estate manager administration pages:
-  title: 'Access Real estate manager administration pages'
+  title: 'Access Real Estate Manager administration pages'
 
 # Estate entity permissions.
 view estate entity:
@@ -12,7 +12,7 @@ view estate entity:
 add estate entity:
   title: 'Add Estate entity'
 edit estate entity:
-  title: 'Edit Estate Entity'
+  title: 'Edit Estate entity'
 delete estate entity:
   title: 'Delete Estate entity'
 administer estate entity:
@@ -25,7 +25,7 @@ view building entity:
 add building entity:
   title: 'Add Building entity'
 edit building entity:
-  title: 'Edit Building Entity'
+  title: 'Edit Building entity'
 delete building entity:
   title: 'Delete Building entity'
 administer building entity:
@@ -38,7 +38,7 @@ view floor entity:
 add floor entity:
   title: 'Add Floor entity'
 edit floor entity:
-  title: 'Edit Floor Entity'
+  title: 'Edit Floor entity'
 delete floor entity:
   title: 'Delete Floor entity'
 administer floor entity:
@@ -51,7 +51,7 @@ view flat entity:
 add flat entity:
   title: 'Add Flat entity'
 edit flat entity:
-  title: 'Edit Flat Entity'
+  title: 'Edit Flat entity'
 delete flat entity:
   title: 'Delete Flat entity'
 administer flat entity:

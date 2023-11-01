@@ -4,7 +4,7 @@ re_mgr.admin:
   defaults:
     _controller: '\Drupal\system\Controller\SystemController::overview'
     link_id: 're_mgr.admin'
-    _title: 'Real estate manager'
+    _title: 'Real Estate Manager'
   requirements:
     _permission: 'access real estate manager administration pages'
 

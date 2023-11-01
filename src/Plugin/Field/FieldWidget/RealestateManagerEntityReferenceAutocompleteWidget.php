@@ -11,8 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @FieldWidget(
  *   id = "re_mgr_entity_reference_autocomplete",
- *   label = @Translation("Real estate manager autocomplete"),
- *   description = @Translation("An autocomplete text field for Real estate manager module entities."),
+ *   label = @Translation("Real Estate Manager autocomplete"),
+ *   description = @Translation("An autocomplete text field for Real Estate Manager module entities."),
  *   field_types = {
  *     "entity_reference"
  *   }

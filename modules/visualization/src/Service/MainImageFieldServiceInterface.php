@@ -10,7 +10,7 @@ interface MainImageFieldServiceInterface {
   /**
    * Create main image field.
    *
-   * Create main image field for all bundles of all Real estate manager
+   * Create main image field for all bundles of all Real Estate Manager
    * entities.
    */
   public function createMainImageField(): void;
@@ -18,7 +18,7 @@ interface MainImageFieldServiceInterface {
   /**
    * Delete main image field.
    *
-   * Delete main image field for all bundles of all Real estate manager
+   * Delete main image field for all bundles of all Real Estate Manager
    * entities.
    */
   public function deleteMainImageField(): void;

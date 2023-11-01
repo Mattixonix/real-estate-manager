@@ -6,5 +6,5 @@ dependencies:
       - re_mgr_demo
 id: demo
 label: Demo
-description: 'Used in Real estate manager Demo module.'
+description: 'Used in Real Estate Manager Demo module.'
 new_revision: true

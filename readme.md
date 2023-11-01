@@ -2,7 +2,7 @@
 
 <p>
   The Real Estate Manager module provides a system for managing and additionally
-  presenting any real estate in multiple ways.
+  presenting any real estates in multiple ways.
 </p>
 <p>
   Real Estate Manager is a base module that includes several submodules:

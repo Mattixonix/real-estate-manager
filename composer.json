@@ -1,6 +1,6 @@
 {
     "name": "drupal/re_mgr",
-    "description": "Provides additional functionalities for real estate management.",
+    "description": "Provides additional functionalities for real estates management.",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
     "authors": [

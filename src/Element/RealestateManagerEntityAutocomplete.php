@@ -6,7 +6,7 @@ use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Provides an Real estate manager entity autocomplete form element.
+ * Provides an Real Estate Manager entity autocomplete form element.
  *
  * Field extend basic entity_autocomplete form element
  * by restrict to not final floor in floor reference and
