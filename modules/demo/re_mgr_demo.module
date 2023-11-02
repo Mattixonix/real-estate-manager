@@ -5,6 +5,21 @@
  * Contain all hook functions for Real Estate Manager Demo module.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ *
+ * Add module themes.
+ */
+function re_mgr_demo_theme(): array {
+  return [
+    're_mgr_demo_help' => [
+      'variables' => [],
+    ],
+  ];
+}
+
 /**
  * Implements hook_modules_install().
  *
@@ -15,4 +30,17 @@ function re_mgr_demo_modules_installed(array $modules, bool $is_syncing): void {
     $creator_service = \Drupal::service('re_mgr_demo.create_data');
     $creator_service->initVisualizationCreator();
   }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * Add help page for module.
+ */
+function re_mgr_demo_help(string $route_name, RouteMatchInterface $route_match): array {
+  if ($route_name === 'help.page.re_mgr_demo') {
+    return ['#theme' => 're_mgr_demo_help'];
+  }
+
+  return [];
 }

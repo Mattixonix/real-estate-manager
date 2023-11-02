@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Theme implementation for module's help.
+ */
+#}
+<p>
+  {{ 'A module that provides the Presentation module plugin. The main task of the plugin is displaying data in an attractive visual way to the end user and finally contact in order to obtain a lead. It also provides a coordinate field to every entity type except Estate because it has no parent entity. Coordinates are a text field into which the attribute value should be pasted "d" path, previously prepared by the graphic designer, to be displayed in SVG embedded in the main image of the parent entity.'|t }}
+</p>
+<p>
+  <b>{{ 'An example of using coordinates and the process of creating them on the example of Estate <- Building:'|t }}</b>
+  <ul>
+    <li>
+      {{ 'The graphic designer has a photo of an Estate with Buildings.'|t }}
+    </li>
+    <li>
+      {{ 'Creates an SVG with a size equal to this Estate photo.'|t }}
+    </li>
+    <li>
+      {{ 'Creates outlines (path), one per building.'|t }}
+    </li>
+    <li>
+      {{ 'Exports the image in SVG format.'|t }}
+    </li>
+    <li>
+      {{ 'Developer opens the SVG and downloads a photo of the Estate from it.'|t }}
+    </li>
+    <li>
+      {{ 'Creates the Estate entity with the above photo.'|t }}
+    </li>
+    <li>
+      {{ 'Reopens the SVG and retrieves the "d" attribute values from the paths.'|t }}
+    </li>
+    <li>
+      {{ 'Creates Building entities by adding their main photos (also provided by graphics) and the "d" attribute values are placed in the coordinates field.'|t }}
+    </li>
+  </ul>
+</p>
+<p>
+  {{ 'After such a procedure, displaying the created Estate, the end user will be able to click on the building and go through it to its display stage. This action must be repeated on all entities.'|t }}
+</p>
+<p>
+  <b>{{ 'Plugin available settings'|t }}</b>:
+  <ol>
+    <li>
+      {{ 'The first setting is to decide what type of entity the block should start displaying from Estate or Building?'|t }}
+    </li>
+    <li>
+      {{ 'Then select a given entity depending on the selection in the first point.'|t }}
+    </li>
+    <li>
+      {{ 'Decide whether Flats or Buildings are for sale.'|t }}
+    </li>
+    <li>
+      {{ 'Select the previously created form from the Webform module for generating leads.'|t }}
+    </li>
+    <li>
+      {{ 'Optionally, the user can set the style of the main images of the entity, useful when the user wants e.g. format image to webp.'|t }}
+    </li>
+    <li>
+      {{ 'Optionally, the user selects the color and/or target transparency of the displayed SVG paths after hovering over them.'|t }}
+    </li>
+  </ol>
+</p>
+<p>
+  {{ 'The result will be displayed in the block.'|t }}
+</p>
+<p>
+  <b>{{ 'The settings example (with demo module):'|t }}</b>
+  <ul>
+    <li>
+      {{ 'View from estate'|t }}
+    </li>
+    <li>
+      {{ 'Selected "Paradise" Estate'|t }}
+    </li>
+    <li>
+      {{ 'Flats for sale'|t }}
+    </li>
+    <li>
+      {{ '"Ask for an offer" form'|t }}
+    </li>
+    <li>
+      {{ 'Fill color "000000"'|t }}
+    </li>
+    <li>
+      {{ 'Target transparency "60"'|t }}
+    </li>
+  </ul>
+</p>
+<p>
+  {{ 'After locating the block on the website, the user will see the main photo of the Paradise Estate with descriptions and the ability to choose one of 4 buildings. Hover color and transparency are #000 / 60%. After selecting a given Building, the user can select one of its Floors and then one of the available Flats marked with appropriate colors as described in the legend. After hovering over the flat, its short description will appear (it is possible for editing in the Flat display - tooltip). The user cannot select sold Flats. After selecting one of the available flats, a Flat description appears on the left (Flat display - description), its main photo in the middle, and on the right a form for generating leads, in this case the demo form only saves the application in the database, for demonstration purposes. The "Display from the Building" option, allows the user to skip displaying the Estate, and the "Sale buildings" option, adds an ask for an offer button at the Building stage and after clicking it, loads ajax modal window with a form. It also sets the final stage to the Floor.'|t }}
+</p>

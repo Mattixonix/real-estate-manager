@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_theme().
@@ -20,6 +21,9 @@ function re_mgr_presentation_theme(): array {
         'content' => NULL,
         'block_id' => NULL,
       ],
+    ],
+    're_mgr_presentation_help' => [
+      'variables' => [],
     ],
   ];
 }
@@ -47,4 +51,17 @@ function re_mgr_presentation_purge_data_submit(array &$form, FormStateInterface 
   foreach ($placed_re_mgr_blocks as $block) {
     $block->delete();
   }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * Add help page for module.
+ */
+function re_mgr_presentation_help(string $route_name, RouteMatchInterface $route_match): array {
+  if ($route_name === 'help.page.re_mgr_presentation') {
+    return ['#theme' => 're_mgr_presentation_help'];
+  }
+
+  return [];
 }

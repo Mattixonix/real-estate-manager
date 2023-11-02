@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
@@ -31,6 +32,9 @@ function re_mgr_visualization_theme(): array {
         'webform' => [],
         'front_url' => NULL,
       ],
+    ],
+    're_mgr_visualization_help' => [
+      'variables' => [],
     ],
   ];
 }
@@ -168,4 +172,17 @@ function re_mgr_visualization_preprocess_form_element_label(array &$variables): 
   if (in_array($element_title, $elements)) {
     $variables['attributes']['class'][] = 'form-required';
   }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * Add help page for module.
+ */
+function re_mgr_visualization_help(string $route_name, RouteMatchInterface $route_match): array {
+  if ($route_name === 'help.page.re_mgr_visualization') {
+    return ['#theme' => 're_mgr_visualization_help'];
+  }
+
+  return [];
 }
