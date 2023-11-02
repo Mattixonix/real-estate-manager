@@ -29,9 +29,6 @@ HEAVEN <3
 - wrzuć moduł na drupal.org
 	* dodaj tarcze
 		- zaczekaj na ocenę apadermo, Adama i innych
-	* spolszcz moduł
-		- czekaj na odpowiedź palik'a żeby nadał Ci rolę reviewer
-		- popraw tłumaczenia jak będą dostępne
 	* rozpowszechnij
 		- Vobacom (Michał, Przemek, Kuba, Paweł -> Grzegorzowi i Marcinowi, Artur, Michał Janiec, Janek, Przemek, Szymon)
 		- Smartbees (Adam, Gracjan, Filip, Aleks, Bronek, Krystian, Kewin, Michał, Krzysztow, Szymon, Robert, Denis, Mateusz)
