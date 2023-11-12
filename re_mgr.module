@@ -77,23 +77,7 @@ function re_mgr_entity_operation(EntityInterface $entity): array {
  * Add library with icon to toolbar.
  */
 function re_mgr_toolbar_alter(array &$items): void {
-  $admin_theme = \Drupal::config('system.theme')->get('admin');
-  $attached_library = '';
-
-  switch ($admin_theme) {
-    case 'claro':
-      $attached_library = 're_mgr/toolbar';
-      break;
-
-    case 'gin':
-      $attached_library = 're_mgr/toolbar-gin';
-      break;
-
-    default:
-      $attached_library = 're_mgr/toolbar';
-  }
-
-  $items['administration']['#attached']['library'][] = $attached_library;
+  $items['administration']['#attached']['library'][] = 're_mgr/toolbar';
 }
 
 /**
