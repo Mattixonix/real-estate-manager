@@ -134,6 +134,9 @@ class CreatorService implements CreatorServiceInterface {
   private function createBuildings(): void {
 
     foreach (self::BUILDINGS_IMAGE_NAME as $building_image_name) {
+      $name = $this->t('Cool house');
+      $estate_id = [];
+      $status = NULL;
 
       if (str_starts_with($building_image_name, 'estate')) {
         $name = strtoupper(substr($building_image_name, -1));
@@ -141,11 +144,6 @@ class CreatorService implements CreatorServiceInterface {
           'target_id' => $this->entitiesIdsMap['estate']['estate_id'],
         ];
         $status = self::BUILDINGS_STATUS_MAP[$building_image_name];
-      }
-      else {
-        $name = $this->t('Cool house');
-        $estate_id = [];
-        $status = NULL;
       }
 
       $entity_data = [
@@ -238,19 +236,21 @@ class CreatorService implements CreatorServiceInterface {
       $flat_number = 1;
 
       foreach ($this->entitiesIdsMap['estate'][$estate_building_name] as $floor) {
-        if (!is_int($floor)) {
-          $entity_data['floor_id'] = [
-            'target_id' => $floor['floor_id'],
-          ];
+        if (is_int($floor)) {
+          continue;
+        }
 
-          for ($i = 0; $i < 4; $i++) {
-            $entity_data['name'] = $flat_number;
-            $flat_number++;
-            $entity_data['status'] = rand(1, 3);
+        $entity_data['floor_id'] = [
+          'target_id' => $floor['floor_id'],
+        ];
 
-            $flat = Flat::create($entity_data);
-            $flat->save();
-          }
+        for ($i = 0; $i < 4; $i++) {
+          $entity_data['name'] = $flat_number;
+          $flat_number++;
+          $entity_data['status'] = rand(1, 3);
+
+          $flat = Flat::create($entity_data);
+          $flat->save();
         }
       }
 
