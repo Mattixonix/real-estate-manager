@@ -26,8 +26,6 @@ HEAVEN <3
 	* custom drupal from php
 
 - wrzuć moduł na drupal.org
-	* dodaj tarcze (uzyskaj rolę)
-	* zmień swoją nazwę w composer
 	* rozpowszechnij
 		- Vobacom (Michał, Przemek, Kuba, Paweł -> Grzegorzowi i Marcinowi, Artur, Michał Janiec, Janek, Przemek, Szymon)
 		- Smartbees (Adam, Gracjan, Filip, Aleks, Bronek, Krystian, Kewin, Michał, Krzysztow, Szymon, Robert, Denis, Mateusz)
