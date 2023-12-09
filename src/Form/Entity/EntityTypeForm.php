@@ -17,21 +17,34 @@ class EntityTypeForm extends BundleEntityFormBase {
 
   /**
    * Current entity type.
+   *
+   * @var \Drupal\re_mgr\Entity\EntityTypeInterface
    */
   protected EntityTypeInterface $entityType;
 
   /**
    * The Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * The Display Repository service.
+   *
+   * @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface
    */
   protected EntityDisplayRepositoryInterface $displayRepository;
 
   /**
    * Constructs a EntityTypeForm object.
+   *
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Entity service.
+   * @param \Drupal\Core\Entity\EntityDisplayRepositoryInterface $display_repository
+   *   The Display Repository service.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The Module Handler service.
    */
   public function __construct(
     EntityServiceInterface $entity_service,
@@ -127,6 +140,12 @@ class EntityTypeForm extends BundleEntityFormBase {
 
   /**
    * Check whether an entity type configuration exists.
+   * 
+   * @param string $id
+   *  The string id.
+   * 
+   * @return bool
+   *  Is id exists.
    */
   public function exist(string $id): bool {
     $entity = $this->entityTypeManager

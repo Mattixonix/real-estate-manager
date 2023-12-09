@@ -17,16 +17,25 @@ class EntityService implements EntityServiceInterface {
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Current Route Match revision.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
    */
   protected RouteMatchInterface $currentRouteMatch;
 
   /**
    * Constructs a EntityService object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $current_route_match
+   *   The Current Route Match revision.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
@@ -150,6 +159,12 @@ class EntityService implements EntityServiceInterface {
 
   /**
    * Get storage name base on given entity.
+   *
+   * @param \Drupal\re_mgr\Entity\EntityInterface|\Drupal\re_mgr\Entity\EntityTypeInterface $entity
+   *   The entity or entity type.
+   *
+   * @return string
+   *   The storage name.
    */
   protected function getStorageName(EntityInterface|EntityTypeInterface $entity): string {
     $entity_type_id = $entity->getEntityTypeId();
@@ -164,6 +179,12 @@ class EntityService implements EntityServiceInterface {
 
   /**
    * Get field name base on given entity.
+   *
+   * @param \Drupal\re_mgr\Entity\EntityInterface|\Drupal\re_mgr\Entity\EntityTypeInterface $entity
+   *   The entity or entity type.
+   *
+   * @return string
+   *   The query field name.
    */
   protected function getQueryFieldName(EntityInterface|EntityTypeInterface $entity): string {
     $field_name = $entity->getEntityKeyword() . '_id';

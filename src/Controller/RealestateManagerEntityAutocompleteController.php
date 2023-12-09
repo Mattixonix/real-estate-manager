@@ -24,11 +24,22 @@ class RealestateManagerEntityAutocompleteController extends EntityAutocompleteCo
 
   /**
    * The Entity Repository revision.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
    */
   protected EntityRepositoryInterface $entityRepository;
 
   /**
    * Constructs an RealestateManagerEntityAutocompleteController object.
+   *
+   * @param \Drupal\Core\Entity\EntityAutocompleteMatcherInterface $matcher
+   *   The autocomplete matcher for entity references.
+   * @param \Drupal\Core\KeyValueStore\KeyValueStoreInterface $key_value
+   *   The key value factory.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The Entity Repository revision.
    */
   public function __construct(
     EntityAutocompleteMatcherInterface $matcher,
