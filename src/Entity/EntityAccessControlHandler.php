@@ -18,6 +18,8 @@ class EntityAccessControlHandler extends CoreEntityAccessControlHandler implemen
 
   /**
    * The Real Estate Manager Entity Service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
@@ -33,6 +35,11 @@ class EntityAccessControlHandler extends CoreEntityAccessControlHandler implemen
 
   /**
    * Constructs the EntityAccessControlHandler instance.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type definition.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Real Estate Manager Entity Service.
    */
   public function __construct(EntityTypeInterface $entity_type, EntityServiceInterface $entity_service) {
     parent::__construct($entity_type);

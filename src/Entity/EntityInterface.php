@@ -15,26 +15,44 @@ interface EntityInterface extends ContentEntityInterface, EntityChangedInterface
 
   /**
    * Get parent entity type id.
+   *
+   * @return string|null
+   *   The parent entity type id.
    */
   public function getParentEntityTypeId(): ?string;
 
   /**
    * Get related entity type id.
+   *
+   * @return string|null
+   *   The related entity type id.
    */
   public function getRelatedEntityTypeId(): ?string;
 
   /**
    * Get entity keyword.
+   *
+   * @return string
+   *   The entity keyword.
    */
   public function getEntityKeyword(): string;
 
   /**
    * Get entity keyword from entity type id.
+   *
+   * @param string $entity_type_id
+   *   Entity type id.
+   *
+   * @return string|null
+   *   The entity keyword.
    */
   public function getEntityKeywordFromEntityTypeId(string $entity_type_id): ?string;
 
   /**
    * Get parent entity.
+   *
+   * @return $this|null
+   *   The entity keyword.
    */
   public function getParentEntity(): ?EntityInterface;
 

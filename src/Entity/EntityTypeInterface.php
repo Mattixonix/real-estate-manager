@@ -12,11 +12,19 @@ interface EntityTypeInterface extends EntityDescriptionInterface, RevisionableEn
 
   /**
    * Sets whether a new revision should be created by default.
+   *
+   * @param bool $new_revision
+   *   Whether to create the new revision.
+   *
+   * @return $this
    */
   public function setNewRevision(bool $new_revision): EntityTypeInterface;
 
   /**
    * Get entity type keyword.
+   *
+   * @return string
+   *   The entity keyword.
    */
   public function getEntityKeyword(): string;
 

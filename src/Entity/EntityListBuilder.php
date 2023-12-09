@@ -18,21 +18,38 @@ class EntityListBuilder extends CoreEntityListBuilder {
 
   /**
    * The date formatter service.
+   *
+   * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
   protected DateFormatterInterface $dateFormatter;
 
   /**
    * The language manager service.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected LanguageManagerInterface $languageManager;
 
   /**
    * The Real Estate Manager Entity Service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a new EntityListBuilder object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type definition.
+   * @param \Drupal\Core\Entity\EntityStorageInterface $storage
+   *   The entity storage class.
+   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
+   *   The date formatter service.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Real Estate Manager Entity Service.
    */
   public function __construct(
     EntityTypeInterface $entity_type,

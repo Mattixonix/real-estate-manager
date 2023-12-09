@@ -11,21 +11,29 @@ abstract class EntityTypeBase extends ConfigEntityBundleBase implements EntityTy
 
   /**
    * The EstateType ID.
+   *
+   * @var string
    */
   protected string $id;
 
   /**
    * The EstateType label.
+   *
+   * @var string
    */
   protected string $label;
 
   /**
    * The EstateType description.
+   *
+   * @var string
    */
   protected string $description = '';
 
   /**
    * Default value of the 'Create new revision' checkbox of Estate type.
+   *
+   * @var bool
    */
   protected bool $new_revision = TRUE;
 
