@@ -18,26 +18,41 @@ class EntityRevisionDeleteForm extends ConfirmFormBase {
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Date Formatter service.
+   *
+   * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
   protected DateFormatterInterface $dateFormatter;
 
   /**
    * The Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * The entity revision.
+   *
+   * @var \Drupal\re_mgr\Entity\EntityInterface
    */
   protected EntityInterface $revision;
 
   /**
    * Constructs a new EntityRevisionDeleteForm.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
+   *   The Date Formatter service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Entity service.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,

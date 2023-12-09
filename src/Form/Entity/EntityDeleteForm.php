@@ -17,11 +17,22 @@ class EntityDeleteForm extends ContentEntityDeleteForm {
 
   /**
    * The Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a EntityDeleteForm object.
+   *
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository service.
+   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
+   *   The entity type bundle service.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Entity service.
    */
   public function __construct(
     EntityRepositoryInterface $entity_repository,

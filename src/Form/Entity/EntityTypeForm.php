@@ -140,12 +140,12 @@ class EntityTypeForm extends BundleEntityFormBase {
 
   /**
    * Check whether an entity type configuration exists.
-   * 
+   *
    * @param string $id
-   *  The string id.
-   * 
+   *   The string id.
+   *
    * @return bool
-   *  Is id exists.
+   *   Is id exists.
    */
   public function exist(string $id): bool {
     $entity = $this->entityTypeManager

@@ -15,11 +15,16 @@ class EntityTypeDeleteForm extends EntityConfirmFormBase {
 
   /**
    * The Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a EntityTypeDeleteForm object.
+   *
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Entity service.
    */
   public function __construct(protected EntityServiceInterface $entity_service) {
     $this->entityService = $entity_service;

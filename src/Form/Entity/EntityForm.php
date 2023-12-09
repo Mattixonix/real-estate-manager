@@ -17,11 +17,22 @@ class EntityForm extends ContentEntityForm {
 
   /**
    * The Date Formatter service.
+   *
+   * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
   protected DateFormatterInterface $dateFormatter;
 
   /**
    * Constructs a new EntityForm object.
+   *
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository service.
+   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
+   *   The entity type bundle service.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
+   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
+   *   The Module Handler service.
    */
   public function __construct(
     EntityRepositoryInterface $entity_repository,

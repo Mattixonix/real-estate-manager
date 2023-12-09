@@ -157,7 +157,7 @@ class RealestateManagerEntityAutocompleteController extends EntityAutocompleteCo
     foreach ($entities as $entity_id => $entity) {
       /** @var \Drupal\re_mgr\Entity\EntityInterface $entity */
       $bundle = $entity->bundle();
-      $entity_preview = $this->t('Name@suffix', ['@suffix' => ':'], ['context' => 'autocomplete']) . ' ' . Html::escape($this->entityRepository->getTranslationFromContext($entity)->label() ?? '');
+      $entity_preview = $this->t('Name@suffix', ['@suffix' => ':'], ['context' => 'autocomplete']) . ' ' . Html::escape($this->entityRepository->getTranslationFromContext($entity)?->label() ?? '');
 
       /* Add related to information */
       if (in_array($target_type, ['re_mgr_floor', 're_mgr_building'])) {

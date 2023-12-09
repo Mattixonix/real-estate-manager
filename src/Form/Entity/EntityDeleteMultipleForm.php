@@ -19,11 +19,24 @@ class EntityDeleteMultipleForm extends DeleteMultipleForm {
 
   /**
    * The Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a new EntityDeleteMultipleForm object.
+   *
+   * @param \Drupal\Core\Session\AccountInterface $current_user
+   *   The current user.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store_factory
+   *   The tempstore factory.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Entity service.
    */
   public function __construct(
     AccountInterface $current_user,
@@ -51,6 +64,9 @@ class EntityDeleteMultipleForm extends DeleteMultipleForm {
 
   /**
    * Returns a selection list.
+   *
+   * @return array
+   *   Array of selected items.
    */
   public function getSelection(): array {
     return $this->selection;
