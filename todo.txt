@@ -24,9 +24,3 @@ HEAVEN <3
 - docker
 	* https
 	* custom drupal from php
-
-- wrzuć moduł na drupal.org
-	* rozpowszechnij
-		- Vobacom (Michał, Przemek, Kuba, Paweł -> Grzegorzowi i Marcinowi, Artur, Michał Janiec, Janek, Przemek, Szymon)
-		- Smartbees (Adam, Gracjan, Filip, Aleks, Bronek, Krystian, Kewin, Michał, Krzysztow, Szymon, Robert, Denis, Mateusz)
-		- Droptica (Agata Charęza, Weronika Głogowska, Gruby co mnie nie lubi i ten gościu co robi tutoriale)
