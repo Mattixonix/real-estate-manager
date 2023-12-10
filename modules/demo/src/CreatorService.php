@@ -59,36 +59,57 @@ class CreatorService implements CreatorServiceInterface {
 
   /**
    * The File Repository service.
+   *
+   * @var \Drupal\file\FileRepositoryInterface
    */
   protected FileRepositoryInterface $fileRepository;
 
   /**
    * The File System service.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
    */
   protected FileSystemInterface $fileSystem;
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Module Extension List service.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
    */
   protected ModuleExtensionList $moduleExtensionList;
 
   /**
    * Contains id's of created media.
+   *
+   * @var array
    */
   protected array $mediaIds = [];
 
   /**
    * Contains ids of created entities in multilevel array.
+   *
+   * @var array
    */
   protected array $entitiesIdsMap;
 
   /**
    * Constructs a CreatorService object.
+   *
+   * @param \Drupal\file\FileRepositoryInterface $file_repository
+   *   The File Repository service.
+   * @param \Drupal\Core\File\FileSystemInterface $file_system
+   *   The File System service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\Core\Extension\ModuleExtensionList $module_extension_list
+   *   The Module Extension List service.
    */
   public function __construct(
     FileRepositoryInterface $file_repository,
