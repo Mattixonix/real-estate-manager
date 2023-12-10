@@ -16,11 +16,18 @@ class AjaxChangeTab extends ControllerBase {
 
   /**
    * The Module Extension List service.
+   *
+   * @var \Drupal\re_mgr_presentation\Manager\PresentationManager
    */
   protected PresentationManager $presentationPluginManager;
 
   /**
    * Constructs a AjaxChangeTab object.
+   *
+   * @param \Drupal\re_mgr_presentation\Manager\PresentationManager $presentation_plugin_manager
+   *   The Module Extension List service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory service.
    */
   public function __construct(
     PresentationManager $presentation_plugin_manager,
@@ -42,6 +49,14 @@ class AjaxChangeTab extends ControllerBase {
 
   /**
    * Ajax change tab function.
+   *
+   * @param string $plugin_id
+   *   The plugin id.
+   * @param string $block_id
+   *   The block id.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Selected tab content.
    */
   public function changeTab(string $plugin_id, string $block_id): AjaxResponse {
     /** @var array */

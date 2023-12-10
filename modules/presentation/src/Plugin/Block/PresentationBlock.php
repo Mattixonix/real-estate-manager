@@ -23,31 +23,52 @@ class PresentationBlock extends BlockBase implements ContainerFactoryPluginInter
 
   /**
    * The Presentation Plugin Manager service.
+   *
+   * @var \Drupal\re_mgr_presentation\Manager\PresentationManager
    */
   protected PresentationManager $presentationPluginManager;
 
   /**
-   * The Presntation Block Builder service.
+   * The Presentation Block Builder service.
+   *
+   * @var \Drupal\re_mgr_presentation\Service\PresentationBlockBuilderServiceInterface
    */
   protected PresentationBlockBuilderServiceInterface $presentationBlockBuilderService;
 
   /**
    * Contains plugin objects.
+   *
+   * @var array
    */
   protected array $plugins = [];
 
   /**
    * Contains plugin labels.
+   *
+   * @var array
    */
   protected array $pluginLabels = [];
 
   /**
    * Contains plugin content.
+   *
+   * @var array
    */
   protected array $pluginContent = [];
 
   /**
    * Constructs a new PresentationBlock.
+   *
+   * @param array $configuration
+   *   The plugin configuration.
+   * @param string $plugin_id
+   *   The plugin id.
+   * @param array $plugin_definition
+   *   The plugin definition.
+   * @param \Drupal\re_mgr_presentation\Manager\PresentationManager $presentation_plugin_manager
+   *   The Presentation Plugin Manager service.
+   * @param \Drupal\re_mgr_presentation\Service\PresentationBlockBuilderServiceInterface $presentation_block_builder_service
+   *   The Presentation Block Builder service.
    */
   public function __construct(
     array $configuration,
@@ -293,6 +314,9 @@ class PresentationBlock extends BlockBase implements ContainerFactoryPluginInter
 
   /**
    * Prepare class properties.
+   *
+   * @param string|null $block_id
+   *   The block id.
    */
   protected function init(?string $block_id): void {
     /** @var array[] */

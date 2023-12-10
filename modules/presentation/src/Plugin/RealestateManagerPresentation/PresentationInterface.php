@@ -13,11 +13,22 @@ interface PresentationInterface extends ConfigurableInterface, PluginFormInterfa
 
   /**
    * Return presentation plugin label.
+   *
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   *   The label.
    */
   public function getLabel(): TranslatableMarkup;
 
   /**
    * Return presentation plugin content.
+   *
+   * @param array $configuration
+   *   The block configuration.
+   * @param string|null $block_id
+   *   The block id.
+   *
+   * @return array
+   *   Tabs content.
    */
   public function getContent(array $configuration, ?string $block_id): array;
 
