@@ -22,16 +22,31 @@ class VisualizationPresentation extends PresentationBase implements ContainerFac
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Visualization service.
+   *
+   * @var \Drupal\re_mgr_visualization\Service\VisualizationServiceInterface
    */
   protected VisualizationServiceInterface $visualizationService;
 
   /**
    * Constructs a new VisualizationPresentation.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param array $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\re_mgr_visualization\Service\VisualizationServiceInterface $visualization_service
+   *   The Visualization service.
    */
   public function __construct(
     array $configuration,

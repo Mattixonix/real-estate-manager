@@ -22,26 +22,43 @@ class VisualizationService implements VisualizationServiceInterface {
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Entity Display Repository service.
+   *
+   * @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface
    */
   protected EntityDisplayRepositoryInterface $entityDisplayRepository;
 
   /**
    * The Config Factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
   protected ConfigFactoryInterface $configFactory;
 
   /**
    * The Real Estate Manager Entity Service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a VisualizationService object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display_repository
+   *   The Entity Display Repository service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The Config Factory service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Real Estate Manager Entity Service.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,

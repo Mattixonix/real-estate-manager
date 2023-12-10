@@ -21,26 +21,41 @@ class MainImageFieldService implements MainImageFieldServiceInterface {
 
   /**
    * The Entity Type Manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The Entity Type Bundle Info service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
    */
   protected EntityTypeBundleInfoInterface $entityTypeBundleInfo;
 
   /**
    * The Display Repository service.
+   *
+   * @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface
    */
   protected EntityDisplayRepositoryInterface $displayRepository;
 
   /**
    * List of coordinated entities.
+   *
+   * @var array
    */
   protected array $entityList;
 
   /**
    * Constructs a MainImageFieldService object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager service.
+   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
+   *   The Entity Type Bundle Info service.
+   * @param \Drupal\Core\Entity\EntityDisplayRepositoryInterface $display_repository
+   *   The Display Repository service.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,

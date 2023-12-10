@@ -19,22 +19,31 @@ class AjaxVisualizationSteps extends ControllerBase {
 
   /**
    * The Visualization service.
+   *
+   * @var \Drupal\re_mgr_visualization\Service\VisualizationServiceInterface
    */
   protected VisualizationServiceInterface $visualizationService;
 
   /**
    * The Real Estate Manager Entity service.
+   *
+   * @var \Drupal\re_mgr\Service\EntityServiceInterface
    */
   protected EntityServiceInterface $entityService;
 
   /**
    * Constructs a AjaxVisualizationSteps object.
+   *
+   * @param \Drupal\re_mgr_visualization\Service\VisualizationServiceInterface $visualization_service
+   *   The Visualization service.
+   * @param \Drupal\re_mgr\Service\EntityServiceInterface $entity_service
+   *   The Real Estate Manager Entity service.
    */
   public function __construct(
-    VisualizationServiceInterface $visualizationService,
+    VisualizationServiceInterface $visualization_service,
     EntityServiceInterface $entity_service
   ) {
-    $this->visualizationService = $visualizationService;
+    $this->visualizationService = $visualization_service;
     $this->entityService = $entity_service;
   }
 
@@ -50,6 +59,28 @@ class AjaxVisualizationSteps extends ControllerBase {
 
   /**
    * Ajax function for visualization block activate on next step.
+   *
+   * @param string $block_id
+   *   The block id.
+   * @param string $current_entity_keyword
+   *   Current entity keyword.
+   * @param string $chosen_entity_id
+   *   Chosen entity id.
+   * @param string $path_fill
+   *   Svg path fill.
+   * @param string $path_target_opacity
+   *   Path target opacity.
+   * @param string $starting_entity_keyword
+   *   Starting entity keyword.
+   * @param string $sell_entity_keyword
+   *   Sell entity keyword.
+   * @param string $webform_id
+   *   Webform id.
+   * @param string|null $main_image_style
+   *   Used image style.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Next step render array.
    */
   public function nextStep(
     string $block_id,
@@ -102,6 +133,28 @@ class AjaxVisualizationSteps extends ControllerBase {
 
   /**
    * Ajax function for visualization block activate on prev step.
+   *
+   * @param string $block_id
+   *   The block id.
+   * @param string $current_entity_keyword
+   *   Current entity keyword.
+   * @param string $current_entity_id
+   *   Current entity id.
+   * @param string $path_fill
+   *   Svg path fill.
+   * @param string $path_target_opacity
+   *   Path target opacity.
+   * @param string $starting_entity_keyword
+   *   Starting entity keyword.
+   * @param string $sell_entity_keyword
+   *   Sell entity keyword.
+   * @param string $webform_id
+   *   Webform id.
+   * @param string|null $main_image_style
+   *   Used image style.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Previous render array.
    */
   public function prevStep(
     string $block_id,
@@ -149,6 +202,28 @@ class AjaxVisualizationSteps extends ControllerBase {
 
   /**
    * Ajax function for visualization block activate on navigation.
+   *
+   * @param string $block_id
+   *   The block id.
+   * @param string $selected_entity_keyword
+   *   Selected entity keyword.
+   * @param string $selected_entity_id
+   *   Selected entity id.
+   * @param string $path_fill
+   *   Svg path fill.
+   * @param string $path_target_opacity
+   *   Path target opacity.
+   * @param string $starting_entity_keyword
+   *   Starting entity keyword.
+   * @param string $sell_entity_keyword
+   *   Sell entity keyword.
+   * @param string $webform_id
+   *   Webform id.
+   * @param string|null $main_image_style
+   *   Used image style.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Change step render array.
    */
   public function changeStep(
     string $block_id,
