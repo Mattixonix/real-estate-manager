@@ -23,4 +23,3 @@ HEAVEN <3
 
 - docker
 	* https
-	* custom drupal from php
