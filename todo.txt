@@ -20,6 +20,3 @@ HEAVEN <3
 
 - napisz testy
 	* sprawdź po co się pisze testy i do jakich funkcji
-
-- docker
-	* https
